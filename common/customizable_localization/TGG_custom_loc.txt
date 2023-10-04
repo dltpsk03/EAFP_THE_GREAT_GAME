@@ -1,0 +1,43 @@
+﻿je_great_game_loc = {
+	type = country
+	text = { 
+		trigger = {
+			NOT = { has_global_variable = crimean_war_end_var }
+		}
+		localization_key = great_game_beginning
+	}
+	text = { 
+		trigger = {
+			has_global_variable = crimean_war_end_var
+		}
+		localization_key = great_game_complication
+	}
+	text = {
+		trigger = {
+            has_global_variable = russo_turkish_war_end_var
+		}
+		localization_key = great_game_crisis
+	}
+}
+
+je_great_game_reason_loc = {
+	type = country
+	text = { 
+		trigger = {
+			NOT = { has_global_variable = crimean_war_end_var }
+		}
+		localization_key = great_game_beginning_reason
+	}
+	text = { 
+		trigger = {
+			has_global_variable = crimean_war_end_var
+		}
+		localization_key = great_game_complication_reason
+	}
+	text = {
+		trigger = {
+            has_global_variable = russo_turkish_war_end_var
+		}
+		localization_key = great_game_crisis_reason
+	}
+}

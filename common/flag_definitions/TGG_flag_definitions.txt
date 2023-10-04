@@ -1,0 +1,16 @@
+﻿
+CPL = { 
+	flag_definition = {
+		coa = CPL
+		subject_canton = CPL
+		priority = 1
+	}
+}
+
+POS = { 
+	flag_definition = {
+		coa = POS
+		subject_canton = POS
+		priority = 1
+	}
+}

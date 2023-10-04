@@ -1,0 +1,155 @@
+﻿je_tgg_main = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+	}
+
+	possible = {
+		c:RUS = root
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = great_game_win_tt
+			has_global_variable = great_game_win_var
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = tgg_main.1
+		}
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = great_game_lose_tt
+			has_global_variable = great_game_lose_var
+		}
+	}
+	
+	on_fail = {
+		trigger_event = {
+			id = tgg_main.2
+		}
+	}
+
+	invalid = {
+		custom_tooltip = {
+			text = great_game_end_tt
+			has_global_variable = anglo_russo_treaty_var
+		}
+	}
+
+	on_invalid = {
+		trigger_event = {
+			id = tgg_main.3
+		}
+	}
+
+	weight = 10000
+
+    should_be_pinned_by_default = yes
+}
+
+je_tgg_central_asia = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+	}
+
+	possible = {
+		c:RUS = root
+		game_date > 1836.12.31
+	}
+
+}
+
+je_tgg_balkan = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+		custom_tooltip = {
+			text = crimean_war_end_tt
+			has_global_variable = crimean_war_end_var
+		}
+	}
+
+	possible = {
+		c:RUS = root
+		custom_tooltip = {
+			text = crimean_war_end_tt
+			has_global_variable = crimean_war_end_var
+		}
+	}
+
+}
+
+je_tgg_far_east = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+		custom_tooltip = {
+			text = russo_turkish_war_end_tt
+			has_global_variable = russo_turkish_war_end_var
+		}
+	}
+
+	possible = {
+		c:RUS = root
+		custom_tooltip = {
+			text = russo_turkish_war_end_tt
+			has_global_variable = russo_turkish_war_end_var
+		}
+	}
+}
+
+je_tgg_north_africa = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+		has_global_variable = win_balkan_var
+	}
+
+	possible = {
+		c:RUS = root
+		has_global_variable = win_balkan_var
+	}
+
+}
+
+je_tgg_pacific = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+		has_global_variable = win_far_east_var
+	}
+
+	possible = {
+		c:RUS = root
+		has_global_variable = win_far_east_var
+	}
+}
+
+je_tgg_north_america = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+		c:RUS = root
+		has_global_variable = win_central_asia_var
+		NOT = { has_global_variable = alaska_deal_var }
+	}
+
+	possible = {
+		c:RUS = root
+		has_global_variable = win_central_asia_var
+		NOT = { has_global_variable = alaska_deal_var }
+	}
+
+}

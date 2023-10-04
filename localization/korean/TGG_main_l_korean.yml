@@ -1,0 +1,60 @@
+﻿l_korean:
+  je_tgg_main:0 "[ROOT.GetCountry.GetCustom('je_great_game_loc')]"
+  great_game_beginning:0 "그레이트 게임 : 초기 국면"
+  great_game_complication:0 "그레이트 게임 : 전개 국면"
+  great_game_crisis:0 "그레이트 게임 : 위기 국면"
+
+  great_game_end_tt:0 "그레이트 게임 종료"
+  great_game_win_tt:0 "그레이트 게임 승리"
+  great_game_lose_tt:0 "그레이트 게임 패배"
+
+  je_tgg_main_reason:0 "[ROOT.GetCountry.GetCustom('je_great_game_reason_loc')]"
+  great_game_beginning_reason:0 "더 강한 국력을 위해서는, 언제든지 출항할 수 있는 바다와 방대한 농경지가 필요하다. 부동항과 목초지를 확보하기 위해서 국가 전체의 사활을 걸어야한다.\n\n비록, 대영제국이 우리의 적이 될지라도."
+  great_game_complication_reason:0 "이제 전장은 발칸반도로 바뀌었다. 오스만의 영향력을 축소되었고, 발칸반도의 슬라브 세력들은 독립을 꾀하고 있다. 이들을 도와 발칸반도에 안정적인 세력권을 확보해야한다. "
+  great_game_crisis_reason:0 "이제 싸움은 전세계로 번져 나가고 있다. 다음 무대인 극동에서, 우리는 대영제국의 영향력을 완전히 분쇄하고 우리의 영향력을 전세계로 퍼트려야한다."
+
+  crimean_war_end_tt:0 "오스만과의 전쟁을 끝마침."
+
+  russo_turkish_war_end_tt:0 "오스만과의 두번째 전쟁을 끝마침."
+
+  je_tgg_central_asia:0 "그레이트 게임 : 중앙아시아"
+  je_tgg_central_asia_reason:0 "(여기에 설명 삽입!)"
+  je_tgg_central_asia_reason_goal:0 "중앙아시아를 장악하세요."
+
+  je_tgg_balkan:0 "그레이트 게임 : 발칸 반도"
+  je_tgg_balkan_reason:0 "(여기에 설명 삽입!)"
+  je_tgg_balkan_reason_goal:0 "발칸 반도에 영향력을 행사하세요"
+
+  je_tgg_far_east:0 "그레이트 게임 : 극동"
+  je_tgg_far_east_reason:0 "(여기에 설명 삽입!)"
+  je_tgg_far_east_reason_goal:0 "극동에 영향력을 행사하세요"
+
+  je_tgg_north_africa:0 "그레이트 게임 : 북아프리카 및 중동"
+  je_tgg_north_africa_reason:0 "(여기에 설명 삽입!)"
+  je_tgg_north_africa_reason_goal:0 "북아프리카 및 중동을 장악하세요.""
+
+  je_tgg_pacific:0 "그레이트 게임 : 태평양"
+  je_tgg_pacific_reason:0 "(여기에 설명 삽입!)"
+  je_tgg_pacific_reason_goal:0 "태평양에 영향력을 행사하세요"
+
+  je_tgg_north_america:0 "그레이트 게임 : 북아메리카"
+  je_tgg_north_america_reason:0 "(여기에 설명 삽입!)"
+  je_tgg_north_america_reason_goal:0 "북아메리카에 영향력을 행사하세요"
+
+
+  ##############################################
+
+  tgg_main.1.t:0 "위대한 승리"
+  tgg_main.1.d:0 ""
+  tgg_main.1.f:0 ""
+  tgg_main.1.a:0 ""
+
+  tgg_main.2.t:0 "완전한 패배"
+  tgg_main.2.d:0 ""
+  tgg_main.2.f:0 ""
+  tgg_main.2.a:0 ""
+
+  tgg_main.3.t:0 "영러협상"
+  tgg_main.3.d:0 ""
+  tgg_main.3.f:0 ""
+  tgg_main.3.a:0 ""

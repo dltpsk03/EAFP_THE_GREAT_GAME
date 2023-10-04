@@ -1,0 +1,92 @@
+﻿namespace = tgg_main
+
+tgg_main.1 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1.t
+	desc = tgg_main.1.d
+	flavor = tgg_main.1.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.1.a
+		default_option = yes
+	}
+}
+
+
+tgg_main.2 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.2.t
+	desc = tgg_main.2.d
+	flavor = tgg_main.2.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.2.a
+		default_option = yes
+	}
+}
+
+tgg_main.3 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.3.t
+	desc = tgg_main.3.d
+	flavor = tgg_main.3.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.3.a
+		default_option = yes
+	}
+}

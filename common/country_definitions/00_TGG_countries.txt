@@ -1,0 +1,25 @@
+﻿#폴란드 입헌왕국
+
+CPL = {
+	color = rgb { 220 85 100 }
+	
+	country_type = recognized
+
+	tier = kingdom
+	
+	cultures = { polish }
+	capital = STATE_GREATER_POLAND
+}
+
+#포젠 
+POS = {
+	color = rgb { 85 47 60 }
+	
+	country_type = recognized
+
+	tier = principality
+	
+	cultures = { polish }
+	capital = STATE_POSEN
+}
+
