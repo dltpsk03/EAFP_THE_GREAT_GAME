@@ -1,0 +1,71 @@
+﻿persia_trust_gbr_value = {
+	value = global_var:persia_trust_gbr
+	multiply = -1
+}
+persia_control_gbr_value = {
+	value = global_var:persia_control_gbr
+	multiply = -1
+}
+
+persia_trust_rus_value = {
+	value = global_var:persia_trust_rus
+}
+
+
+persia_control_rus_value = {
+	value = global_var:persia_control_rus
+}
+
+afghanistan_trust_gbr_value = {
+	value = global_var:afghanistan_trust_gbr
+	multiply = -1
+}
+afghanistan_control_gbr_value = {
+	value = global_var:afghanistan_control_gbr
+	multiply = -1
+}
+
+afghanistan_trust_rus_value = {
+	value = global_var:afghanistan_trust_rus
+}
+
+
+afghanistan_control_rus_value = {
+	value = global_var:afghanistan_control_rus
+}
+
+uzbek_trust_gbr_value = {
+	value = global_var:uzbek_trust_gbr
+	multiply = -1
+}
+uzbek_control_gbr_value = {
+	value = global_var:uzbek_control_gbr
+	multiply = -1
+}
+
+uzbek_trust_rus_value = {
+	value = global_var:uzbek_trust_rus
+}
+
+
+uzbek_control_rus_value = {
+	value = global_var:uzbek_control_rus
+}
+
+kyrgyz_trust_gbr_value = {
+	value = global_var:kyrgyz_trust_gbr
+	multiply = -1
+}
+kyrgyz_control_gbr_value = {
+	value = global_var:kyrgyz_control_gbr
+	multiply = -1
+}
+
+kyrgyz_trust_rus_value = {
+	value = global_var:kyrgyz_trust_rus
+}
+
+
+kyrgyz_control_rus_value = {
+	value = global_var:kyrgyz_control_rus
+}

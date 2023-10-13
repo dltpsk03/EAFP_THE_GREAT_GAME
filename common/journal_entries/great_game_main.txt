@@ -5,8 +5,90 @@
 		c:RUS = root
 	}
 
+	immediate = {
+		set_variable = greatgame_enable
+		set_global_variable = {
+			name = calc_influence_rus
+			value = 0
+		}
+		set_global_variable = {
+			name = calc_bureaucracy_rus
+			value = 0
+		}
+		set_global_variable = {
+			name = calc_authority_rus
+			value = 0
+		}
+		tgg_set_trust_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_set_trust_rus = {
+			TARGET = persia
+			VALUE = 5
+		}
+		tgg_set_control_gbr = {
+			TARGET = persia
+			VALUE = 0
+		}
+		tgg_set_control_rus = {
+			TARGET = persia
+			VALUE = 0
+		}
+		tgg_set_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = 0
+		}
+		tgg_set_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_set_control_gbr = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_set_control_rus = {
+			TARGET = afghanistan
+			VALUE = 30
+		}
+		tgg_set_trust_gbr = {
+			TARGET = uzbek
+			VALUE = 0
+		}
+		tgg_set_trust_rus = {
+			TARGET = uzbek
+			VALUE = 0
+		}
+		tgg_set_control_gbr = {
+			TARGET = uzbek
+			VALUE = 0
+		}
+		tgg_set_control_rus = {
+			TARGET = uzbek
+			VALUE = 55
+		}
+		tgg_set_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = 0
+		}
+		tgg_set_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 0
+		}
+		tgg_set_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = 0
+		}
+		tgg_set_control_rus = {
+			TARGET = kyrgyz
+			VALUE = 50
+		}
+	}
+
+
 	possible = {
 		c:RUS = root
+		game_date > 1836.7.31
 	}
 
 	complete = {
@@ -48,108 +130,16 @@
 		}
 	}
 
-	weight = 10000
+	on_monthly_pulse = {
+		effect = {
+			determine_kyrgyz_win = yes
+			determine_uzbek_win = yes
+			determine_afghanistan_win = yes
+			determine_persia_win = yes
+		}
+	}
+
+	weight = 9000
 
     should_be_pinned_by_default = yes
-}
-
-je_tgg_central_asia = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
-	is_shown_when_inactive = {
-		c:RUS = root
-	}
-
-	possible = {
-		c:RUS = root
-		game_date > 1836.12.31
-	}
-
-}
-
-je_tgg_balkan = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
-	is_shown_when_inactive = {
-		c:RUS = root
-		custom_tooltip = {
-			text = crimean_war_end_tt
-			has_global_variable = crimean_war_end_var
-		}
-	}
-
-	possible = {
-		c:RUS = root
-		custom_tooltip = {
-			text = crimean_war_end_tt
-			has_global_variable = crimean_war_end_var
-		}
-	}
-
-}
-
-je_tgg_far_east = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
-	is_shown_when_inactive = {
-		c:RUS = root
-		custom_tooltip = {
-			text = russo_turkish_war_end_tt
-			has_global_variable = russo_turkish_war_end_var
-		}
-	}
-
-	possible = {
-		c:RUS = root
-		custom_tooltip = {
-			text = russo_turkish_war_end_tt
-			has_global_variable = russo_turkish_war_end_var
-		}
-	}
-}
-
-je_tgg_north_africa = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
-	is_shown_when_inactive = {
-		c:RUS = root
-		has_global_variable = win_balkan_var
-	}
-
-	possible = {
-		c:RUS = root
-		has_global_variable = win_balkan_var
-	}
-
-}
-
-je_tgg_pacific = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
-	is_shown_when_inactive = {
-		c:RUS = root
-		has_global_variable = win_far_east_var
-	}
-
-	possible = {
-		c:RUS = root
-		has_global_variable = win_far_east_var
-	}
-}
-
-je_tgg_north_america = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
-	is_shown_when_inactive = {
-		c:RUS = root
-		has_global_variable = win_central_asia_var
-		NOT = { has_global_variable = alaska_deal_var }
-	}
-
-	possible = {
-		c:RUS = root
-		has_global_variable = win_central_asia_var
-		NOT = { has_global_variable = alaska_deal_var }
-	}
-
 }

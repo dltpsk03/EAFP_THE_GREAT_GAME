@@ -1,0 +1,185 @@
+﻿tgg_persia_button = {
+	name = "tgg_persia_button"
+	desc = "tgg_persia_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+	}
+}
+
+tgg_afghanistan_button = {
+	name = "tgg_afghanistan_button"
+	desc = "tgg_afghanistan_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+	}
+}
+
+tgg_uzbek_button = {
+	name = "tgg_uzbek_button"
+	desc = "tgg_uzbek_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+	}
+}
+
+tgg_kyrgyz_button = {
+	name = "tgg_kyrgyz_button"
+	desc = "tgg_kyrgyz_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+	}
+}
+
+1848_poland = {
+	name = "1848_poland"
+	desc = "1848_poland_desc"
+
+	visible = {
+		has_global_variable = 1848_poland_start
+		any_diplomatic_play = {
+			is_diplomatic_play_participant = c:POL
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = "1848_poland_tt"
+			has_global_variable = 1848_poland_start
+			s:STATE_VOLHYNIA.region_state:RUS.land_hq.num_garrison_units >= 25
+		}
+	}
+
+	effect = {
+		set_global_variable = intervention_poland
+		trigger_event = {
+			id = tgg_russia.215
+		}
+	}
+}
+
+1848_hungary = {
+	name = "1848_hungary"
+	desc = "1848_hungary_desc"
+
+	visible = {
+		has_global_variable = 1848_hungary_start
+		exists = c:HUN
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = "1848_hungary_tt"
+			has_global_variable = 1848_hungary_start
+			s:STATE_VOLHYNIA.region_state:RUS.land_hq.num_garrison_units >= 32
+		}
+		army_size >= 290
+	}
+
+	effect = {
+		set_global_variable = intervention_hungary
+		trigger_event = {
+			id = tgg_russia.216
+		}
+	}
+}
+
+1848_romania = {
+	name = "1848_romania"
+	desc = "1848_romania_desc"
+
+	visible = {
+		has_global_variable = 1848_romania_start
+		OR = {
+			exists = c:1848WAL
+			exists = c:1848MOL
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = "1848_romania_tt"
+			has_global_variable = 1848_romania_start
+			s:STATE_BESSARABIA.region_state:RUS.land_hq.num_garrison_units >= 10
+		}
+	}
+
+	effect = {
+		set_global_variable = intervention_romania
+		trigger_event = {
+			id = tgg_russia.217
+		}
+	}
+}
+
+tgg_central_asia = {
+	name = "tgg_central_asia"
+	desc = "tgg_central_asia_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		NOT = { has_variable = tgg_central_asia_start }
+		NOT = { has_global_variable = ongoing_events_central_asia }
+		influence > 200
+	}
+
+	effect = {
+		set_variable = {
+			name = tgg_central_asia_start
+			months = 40
+		}
+		trigger_event = {
+			id = tgg_main.50
+		}
+	}
+
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = {
+				game_date > 1837.7.31
+			}
+			add = 100
+		}
+		modifier = {
+			trigger = {
+				has_global_variable = tgg_central_asia_win
+			}
+			add = -100
+		}
+	}
+}

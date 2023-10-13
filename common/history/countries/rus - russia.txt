@@ -21,5 +21,8 @@
 		ig:ig_intelligentsia = { 
 			set_ig_suppression = yes
 		}
+		trigger_event = {
+			id = tgg_framework.1
+		}
 	}
 }

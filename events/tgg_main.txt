@@ -90,3 +90,7355 @@ tgg_main.3 = {
 		default_option = yes
 	}
 }
+
+tgg_main.50 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.50.t
+	desc = tgg_main.50.d
+	flavor = tgg_main.50.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.50.a1
+		trigger = {
+			NOR = {
+				has_global_variable = persia_win_rus
+				has_global_variable = persia_win_gbr
+			}
+			influence > 200
+		}
+		set_global_variable = tgg_persia_title
+		set_global_variable = {
+			name = tgg_event_on_central_asia
+			value = 1
+		}
+		change_global_variable = {
+			name = calc_influence_gbr
+			add = 100
+		}
+		trigger_event = {
+			id = tgg_main.51
+			days = 2
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -50
+			}
+		}
+	}
+	option = {
+		name = tgg_main.50.a2
+		trigger = {
+			NOR = {
+				has_global_variable = afghanistan_win_rus
+				has_global_variable = afghanistan_win_gbr
+			}
+			influence > 200
+		}
+		set_global_variable = tgg_afghanistan_title
+		set_global_variable = {
+			name = tgg_event_on_central_asia
+			value = 2
+		}
+		change_global_variable = {
+			name = calc_influence_gbr
+			add = 75
+		}
+		trigger_event = {
+			id = tgg_main.51
+			days = 2
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+	option = {
+		name = tgg_main.50.a3
+		trigger = {
+			NOR = {
+				has_global_variable = uzbek_win_rus
+				has_global_variable = uzbek_win_gbr
+			}
+			influence > 150
+		}
+		set_global_variable = tgg_uzbek_title
+		set_global_variable = {
+			name = tgg_event_on_central_asia
+			value = 3
+		}
+		change_global_variable = {
+			name = calc_influence_gbr
+			add = 50
+		}
+		trigger_event = {
+			id = tgg_main.51
+			days = 2
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = tgg_main.50.a4
+		trigger = {
+			NOR = {
+				has_global_variable = kyrgyz_win_rus
+				has_global_variable = kyrgyz_win_gbr
+			}
+			influence > 150
+		}
+		set_global_variable = tgg_kyrgyz_title
+		set_global_variable = {
+			name = tgg_event_on_central_asia
+			value = 4
+		}
+		change_global_variable = {
+			name = calc_influence_gbr
+			add = 50
+		}
+		trigger_event = {
+			id = tgg_main.51
+			days = 2
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = tgg_main.50.a5
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+tgg_main.51 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.51.t
+	desc = tgg_main.51.d
+	flavor = tgg_main.51.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.51.a1
+		trigger = {
+			influence > 200
+		}
+		set_global_variable = tgg_central_asia_active
+		change_global_variable = {
+			name = calc_influence_gbr
+			add = 50
+		}
+		trigger_event = {
+			id = tgg_main.52
+			days = 2
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				trigger = {
+					OR = {
+						has_global_variable = tgg_kyrgyz_title
+						has_global_variable = tgg_uzbek_title
+					}
+				}
+				add = -30
+			}
+		}
+	}
+	option = {
+		name = tgg_main.51.a2
+		trigger = {
+			influence > 150
+		}
+		set_global_variable = tgg_central_asia_passive
+		change_global_variable = {
+			name = calc_influence_gbr
+			add = 25
+		}
+		trigger_event = {
+			id = tgg_main.52
+			days = 2
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -60
+			}
+			modifier = {
+				trigger = {
+					has_global_variable = tgg_persia_title
+				}
+				add = -20
+			}
+		}
+	}
+	option = {
+		name = tgg_main.51.a3
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+tgg_main.52 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.52.t
+	desc = tgg_main.52.d
+	flavor = tgg_main.52.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.52.a1
+		set_global_variable = tgg_central_asia_coup
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_coup }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_coup }}
+			3 = { add_journal_entry = { type = tgg_uzbek_coup}}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_coup }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = tgg_main.52.a2
+		set_global_variable = tgg_central_asia_operation
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_operation }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_operation }}
+			3 = { add_journal_entry = { type = tgg_uzbek_operation }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_operation }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -5
+			}
+		}
+	}
+	option = {
+		name = tgg_main.52.a3
+		set_global_variable = tgg_central_asia_assassination_prorus
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_assassination_prorus }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_assassination_prorus }}
+			3 = { add_journal_entry = { type = tgg_uzbek_assassination_prorus }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_assassination_prorus }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 45
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -45
+			}
+		}
+	}
+	option = {
+		name = tgg_main.52.a4
+		set_global_variable = tgg_central_asia_assassination_antigbr
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_assassination_antigbr }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_assassination_antigbr }}
+			3 = { add_journal_entry = { type = tgg_uzbek_assassination_antigbr }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_assassination_antigbr }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 45
+			modifier = {
+				trigger = {
+					game_date < 1842.1.1
+				}
+				add = -45
+			}
+		}
+	}
+	option = {
+		name = tgg_main.52.a5
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+tgg_main.53 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.53.t
+	desc = tgg_main.53.d
+	flavor = tgg_main.53.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_main.53.a1
+		set_global_variable = tgg_central_asia_disseisin
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_disseisin }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_disseisin }}
+			3 = { add_journal_entry = { type = tgg_uzbek_disseisin }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_disseisin }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = {
+		name = tgg_main.53.a2
+		set_global_variable = tgg_central_asia_staff
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_staff }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_staff }}
+			3 = { add_journal_entry = { type = tgg_uzbek_staff }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_staff }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = {
+		name = tgg_main.53.a3
+		set_global_variable = tgg_central_asia_support
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_support }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_support }}
+			3 = { add_journal_entry = { type = tgg_uzbek_support }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_support }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = {
+		name = tgg_main.53.a4
+		set_global_variable = tgg_central_asia_agreement
+		switch = {
+			trigger = global_var:tgg_event_on_central_asia
+			1 = { add_journal_entry = { type = tgg_persia_agreement }}
+			2 = { add_journal_entry = { type = tgg_afghanistan_agreement }}
+			3 = { add_journal_entry = { type = tgg_uzbek_agreement }}
+			4 = { add_journal_entry = { type = tgg_kyrgyz_agreement }}
+			fallback = { always = no }
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = {
+		name = tgg_main.53.a5
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+
+tgg_main.54 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.54.t
+	desc = tgg_main.54.d
+	flavor = tgg_main.54.f
+	
+	event_image = {
+		video = "asia_politician_parliament_motion"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		set_global_variable = tgg_exposition
+	}
+
+	option = {
+		name = tgg_main.54.a
+		default_option = yes
+	}
+}
+
+tgg_main.55 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.55.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.55.d1
+				trigger = {
+					Not = { has_global_variable = intelligence_success }
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.55.d2
+				trigger = {
+					has_global_variable = intelligence_success
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.55.f1
+				trigger = {
+					Not = { has_global_variable = intelligence_success }
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.55.f2
+				trigger = {
+					has_global_variable = intelligence_success
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		remove_global_variable = tgg_exposition
+		set_global_variable = tgg_complication
+	}
+
+	option = {
+		name = tgg_main.55.a
+		default_option = yes
+	}
+}
+
+tgg_main.56 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.56.t
+	desc = tgg_main.56.d
+	flavor = tgg_main.56.f
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		remove_global_variable = tgg_complication
+		set_global_variable = {
+			name = tgg_operation
+			months = 17
+		}
+	}
+
+	option = {
+		name = tgg_main.56.a
+		default_option = yes
+	}
+}
+
+tgg_main.57 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.57.t
+	desc = tgg_main.57.d
+	flavor = tgg_main.57.f
+	
+	event_image = {
+		video = "votp_cops_march"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.57.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = -40
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = 30
+		}
+		c:PER = {
+			change_relations = {
+				country = c:GBR
+				value = 50
+			}
+		}
+	}
+}
+
+tgg_main.58 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.58.t
+	desc = tgg_main.58.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.58.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.58.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.58.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = 20
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = -30
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+		c:PER = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+	option = {
+		name = tgg_main.58.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = -30
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+		c:PER = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.59 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.59.t
+	desc = tgg_main.59.d
+	flavor = tgg_main.59.f
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		remove_global_variable = tgg_complication
+	}
+
+	option = {
+		name = tgg_main.59.a
+		default_option = yes
+	}
+}
+
+tgg_main.60 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.60.t
+	desc = tgg_main.60.d
+	flavor = tgg_main.60.f
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		remove_global_variable = tgg_complication
+	}
+
+	option = {
+		name = tgg_main.60.a
+		default_option = yes
+	}
+}
+
+
+tgg_main.61 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.61.t
+	desc = tgg_main.61.d
+	flavor = tgg_main.61.f
+	
+	event_image = {
+		video = "votp_cops_march"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.61.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = -40
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = 40
+		}
+		c:AFG = {
+			change_relations = {
+				country = c:GBR
+				value = 50
+			}
+		}
+	}
+}
+
+tgg_main.62 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.62.t
+	desc = tgg_main.62.d
+	flavor = tgg_main.62.f
+	
+	event_image = {
+		video = "votp_cops_march"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.62.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = -50
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = 50
+		}
+		c:KHI = {
+			change_relations = {
+				country = c:GBR
+				value = 50
+			}
+		}
+		c:BUK = {
+			change_relations = {
+				country = c:GBR
+				value = 50
+			}
+		}
+	}
+}
+
+tgg_main.63 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.63.t
+	desc = tgg_main.63.d
+	flavor = tgg_main.63.f
+	
+	event_image = {
+		video = "votp_cops_march"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.63.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = -50
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = 50
+		}
+		c:KOK = {
+			change_relations = {
+				country = c:GBR
+				value = 50
+			}
+		}
+	}
+
+}
+
+tgg_main.64 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.64.t
+	desc = tgg_main.64.d
+	flavor = tgg_main.64.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.64.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+		c:PER = {
+			random_scope_character = {
+				limit = { is_ruler = no }
+				kill_character = yes
+			}
+		}
+	}
+}
+
+tgg_main.65 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.65.t
+	desc = tgg_main.65.d
+	flavor = tgg_main.65.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.65.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		c:AFG = {
+			random_scope_character = {
+				limit = { is_ruler = no }
+				kill_character = yes
+			}
+		}
+	}
+}
+
+tgg_main.66 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.66.t
+	desc = tgg_main.66.d
+	flavor = tgg_main.66.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.66.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = -15
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = 15
+		}
+		OR = {
+			c:KHI = {
+				random_scope_character = {
+					limit = { is_ruler = no }
+					kill_character = yes
+				}
+			}
+			c:BUK = {
+				random_scope_character = {
+					limit = { is_ruler = no }
+					kill_character = yes
+				}
+			}
+		}
+	}
+}
+tgg_main.67 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.67.t
+	desc = tgg_main.67.d
+	flavor = tgg_main.67.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.67.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = -15
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = 15
+		}
+		c:KOK = {
+			random_scope_character = {
+				limit = { is_ruler = no }
+				kill_character = yes
+			}
+		}
+	}
+}
+
+tgg_main.68 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.68.t
+	desc = tgg_main.68.d
+	flavor = tgg_main.68.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.68.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+		c:PER = {
+			random_scope_character = {
+				limit = { is_ruler = no }
+				kill_character = yes
+			}
+		}
+	}
+}
+
+tgg_main.69 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.69.t
+	desc = tgg_main.69.d
+	flavor = tgg_main.69.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.69.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		c:AFG = {
+			random_scope_character = {
+				limit = { is_ruler = no }
+				kill_character = yes
+			}
+		}
+	}
+}
+
+tgg_main.70 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.70.t
+	desc = tgg_main.70.d
+	flavor = tgg_main.70.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.70.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = -15
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = 15
+		}
+		OR = {
+			c:KHI = {
+				random_scope_character = {
+					limit = { is_ruler = no }
+					kill_character = yes
+				}
+			}
+			c:BUK = {
+				random_scope_character = {
+					limit = { is_ruler = no }
+					kill_character = yes
+				}
+			}
+		}
+	}
+}
+tgg_main.71 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.71.t
+	desc = tgg_main.71.d
+	flavor = tgg_main.71.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.71.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = -15
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = 15
+		}
+		c:KOK = {
+				random_scope_character = {
+					limit = { is_ruler = no }
+					kill_character = yes
+				}
+			}
+	}
+}
+
+tgg_main.72 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.72.t
+	desc = tgg_main.72.d
+	flavor = tgg_main.72.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.72.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = 25
+		}
+		c:PER = {
+			add_modifier = {
+				name = disseisin_target
+				years = 5
+			}
+		}
+		c:GBR = {
+			add_modifier = {
+				name = disseisin_initiator_alone
+				years = 5
+			}
+		}
+	}
+}
+
+tgg_main.73 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.73.t
+	desc = tgg_main.73.d
+	flavor = tgg_main.73.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.73.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = 25
+		}
+		c:AFG = {
+			add_modifier = {
+				name = disseisin_target
+				years = 5
+			}
+		}
+		c:GBR = {
+			add_modifier = {
+				name = disseisin_initiator_alone
+				years = 5
+			}
+		}
+	}
+}
+
+tgg_main.74 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.74.t
+	desc = tgg_main.74.d
+	flavor = tgg_main.74.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.74.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = 25
+		}
+		c:KHI = {
+			add_modifier = {
+				name = disseisin_target_half
+				years = 5
+			}
+		}
+		c:BUK = {
+			add_modifier = {
+				name = disseisin_target_half
+				years = 5
+			}
+		}
+		c:GBR = {
+			add_modifier = {
+				name = disseisin_initiator_alone
+				years = 5
+			}
+		}
+	}
+}
+
+tgg_main.75 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.75.t
+	desc = tgg_main.75.d
+	flavor = tgg_main.75.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.75.a
+		default_option = yes
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = -10
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = 25
+		}
+		c:KOK = {
+			add_modifier = {
+				name = disseisin_target
+				years = 5
+			}
+		}
+		c:GBR = {
+			add_modifier = {
+				name = disseisin_initiator_alone
+				years = 5
+			}
+		}
+	}
+}
+
+tgg_main.76 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.76.t
+	desc = tgg_main.76.d
+	flavor = tgg_main.76.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.76.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+		c:PER = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.77 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.77.t
+	desc = tgg_main.77.d
+	flavor = tgg_main.77.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.77.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		c:AFG = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+tgg_main.78 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.78.t
+	desc = tgg_main.78.d
+	flavor = tgg_main.78.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.78.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = 30
+		}
+		c:KHI = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+		c:BUK = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+tgg_main.79 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.79.t
+	desc = tgg_main.79.d
+	flavor = tgg_main.79.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.79.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = 30
+		}
+		c:KOK = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.80 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.80.t
+	desc = tgg_main.80.d
+	flavor = tgg_main.80.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.80.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+		c:PER = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.81 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.81.t
+	desc = tgg_main.81.d
+	flavor = tgg_main.81.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.81.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = 15
+		}
+		c:AFG = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+tgg_main.82 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.82.t
+	desc = tgg_main.82.d
+	flavor = tgg_main.82.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.82.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+		c:KHI = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+		c:BUK = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+tgg_main.83 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.83.t
+	desc = tgg_main.83.d
+	flavor = tgg_main.83.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.83.a
+		default_option = yes
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+		c:KOK = {
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.84 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.84.t
+	desc = tgg_main.84.d
+	flavor = tgg_main.84.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.84.a
+		default_option = yes
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = 20
+		}
+	}
+}
+
+tgg_main.85 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.85.t
+	desc = tgg_main.85.d
+	flavor = tgg_main.85.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.85.a
+		default_option = yes
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = 30
+		}
+	}
+}
+
+tgg_main.86 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.86.t
+	desc = tgg_main.86.d
+	flavor = tgg_main.86.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.86.a
+		default_option = yes
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = 40
+		}
+	}
+}
+
+tgg_main.87 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.87.t
+	desc = tgg_main.87.d
+	flavor = tgg_main.87.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.87.a
+		default_option = yes
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = 40
+		}
+	}
+}
+
+tgg_main.88 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.88.t
+	desc = tgg_main.88.d
+	flavor = tgg_main.88.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.88.a
+		default_option = yes
+	}
+}
+
+tgg_main.89 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.89.t
+	desc = tgg_main.89.d
+	flavor = tgg_main.89.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.89.a
+		default_option = yes
+	}
+}
+
+tgg_main.90 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.90.t
+	desc = tgg_main.90.d
+	flavor = tgg_main.90.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.90.a
+		default_option = yes
+	}
+}
+
+tgg_main.91 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.91.t
+	desc = tgg_main.91.d
+	flavor = tgg_main.91.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.91.a
+		default_option = yes
+	}
+}
+tgg_main.92 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.92.t
+	desc = tgg_main.92.d
+	flavor = tgg_main.92.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.92.a
+		default_option = yes
+	}
+}
+
+tgg_main.93 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.93.t
+	desc = tgg_main.93.d
+	flavor = tgg_main.93.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.93.a
+		default_option = yes
+	}
+}
+
+tgg_main.94 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.94.t
+	desc = tgg_main.94.d
+	flavor = tgg_main.94.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.94.a
+		default_option = yes
+	}
+}
+
+tgg_main.95 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.95.t
+	desc = tgg_main.95.d
+	flavor = tgg_main.95.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.95.a
+		default_option = yes
+	}
+}
+
+tgg_main.96 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.96.t
+	desc = tgg_main.96.d
+	flavor = tgg_main.96.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.96.a
+		default_option = yes
+	}
+}
+tgg_main.97 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.97.t
+	desc = tgg_main.97.d
+	flavor = tgg_main.97.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.97.a
+		default_option = yes
+	}
+}
+tgg_main.98 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.98.t
+	desc = tgg_main.98.d
+	flavor = tgg_main.98.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.98.a
+		default_option = yes
+	}
+}
+
+tgg_main.99 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.99.t
+	desc = tgg_main.99.d
+	flavor = tgg_main.99.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.99.a
+		default_option = yes
+	}
+}
+
+tgg_main.100 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.100.t
+	desc = tgg_main.100.d
+	flavor = tgg_main.100.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.100.a
+		default_option = yes
+	}
+}
+
+tgg_main.101 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.101.t
+	desc = tgg_main.101.d
+	flavor = tgg_main.101.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.101.a
+		default_option = yes
+	}
+}
+
+tgg_main.102 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.102.t
+	desc = tgg_main.102.d
+	flavor = tgg_main.102.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.102.a
+		default_option = yes
+	}
+}
+tgg_main.1000 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1000.t
+	desc = tgg_main.1000.d
+	flavor = tgg_main.1000.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1000.a1
+		default_option = yes
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1001
+			}
+		}
+		trigger = {
+			influence > 50
+		}
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = tgg_main.1000.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1002
+			}
+		}
+		trigger = {
+			influence > 100
+			bureaucracy > 50
+		}
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = tgg_main.1000.a3
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1003
+			}
+		}
+		trigger = {
+			gold_reserves > 50000
+		}
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = tgg_main.1000.a4
+	}
+}
+
+tgg_main.1001 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1001.t
+	desc = tgg_main.1001.d
+	flavor = tgg_main.1001.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1001.a1
+		default_option = yes
+		hidden_effect = {
+			change_global_variable = {
+				name = calc_influence_rus
+				add = 50
+			}
+			random_list = {
+				75 = {
+					set_global_variable = intelligence_success
+					trigger_event = {
+						id = tgg_main.1004
+						days = 5
+					}
+				}
+				25 = {
+					set_global_variable = intelligence_fail
+					trigger_event = {
+						id = tgg_main.1005
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1001.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1000
+			}
+		}
+	}
+}
+
+tgg_main.1002 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1002.t
+	desc = tgg_main.1002.d
+	flavor = tgg_main.1002.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1002.a1
+		default_option = yes
+		hidden_effect = {
+			change_global_variable = {
+				name = calc_influence_rus
+				add = 100
+			}
+			change_global_variable = {
+				name = calc_bureaucracy_rus
+				add = 100
+			}
+			random_list = {
+				95 = {
+					set_global_variable = intelligence_success
+					trigger_event = {
+						id = tgg_main.1004
+						days = 5
+					}
+				}
+				5 = {
+					set_global_variable = intelligence_fail
+					trigger_event = {
+						id = tgg_main.1005
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1002.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1000
+			}
+		}
+	}
+}
+
+tgg_main.1003 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1003.t
+	desc = tgg_main.1003.d
+	flavor = tgg_main.1003.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1003.a1
+		default_option = yes
+		hidden_effect = {
+			add_treasury = -50000
+			random_list = {
+				75 = {
+					set_global_variable = intelligence_success
+					trigger_event = {
+						id = tgg_main.1004
+						days = 5
+					}
+				}
+				25 = {
+					set_global_variable = intelligence_fail
+					trigger_event = {
+						id = tgg_main.1005
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1003.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1000
+			}
+		}
+	}
+}
+
+tgg_main.1004 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1004.t
+	desc = tgg_main.1004.d
+	flavor = tgg_main.1004.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1004.a
+	}
+		
+}
+
+tgg_main.1005 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1005.t
+	desc = tgg_main.1005.d
+	flavor = tgg_main.1005.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1005.a
+	}
+		
+}
+
+tgg_main.1006 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1006.t
+	desc = tgg_main.1006.d
+	flavor = tgg_main.1006.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1006.a1
+		default_option = yes
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1007
+			}
+		}
+		trigger = {
+			influence > 50
+		}
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = tgg_main.1006.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1009
+			}
+		}
+		trigger = {
+			influence > 100
+			bureaucracy > 50
+		}
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = tgg_main.1006.a3
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1010
+			}
+		}
+		trigger = {
+			always = no
+		}
+	}
+	option = {
+		name = tgg_main.1006.a4
+	}
+}
+
+tgg_main.1007 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1007.t
+	desc = tgg_main.1007.d
+	flavor = tgg_main.1007.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1007.a1
+		default_option = yes
+		hidden_effect = {
+			change_global_variable = {
+				name = calc_authority_rus
+				add = 100
+			}
+			change_global_variable = {
+				name = calc_influence_rus
+				add = 50
+			}
+			random_list = {
+				60 = {
+					set_global_variable = threat_fail
+					trigger_event = {
+						id = tgg_main.1008
+						days = 5
+					}
+				}
+				40 = {
+					set_global_variable = tgg_operation_russia_threat
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1007.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1006
+			}
+		}
+	}
+}
+
+tgg_main.1009 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1009.t
+	desc = tgg_main.1009.d
+	flavor = tgg_main.1009.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1009.a1
+		default_option = yes
+		hidden_effect = {
+			change_global_variable = {
+				name = calc_influence_rus
+				add = 100
+			}
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = tgg_main.1008
+						days = 5
+					}
+				}
+				30 = {
+					set_global_variable = tgg_operation_russia_intervention
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1009.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1006
+			}
+		}
+	}
+}
+
+tgg_main.1011 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1011.t
+	desc = tgg_main.1011.d
+	flavor = tgg_main.1011.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1011.a1
+		set_global_variable = tgg_central_asia_active_rus
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = tgg_central_asia_coup }
+				trigger_event = {
+					id = tgg_main.1012
+					days 5
+				}
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						has_global_variable = tgg_central_asia_assassination_antigbr 
+						has_global_variable = tgg_afghanistan_assassination_prorus 
+					}
+				}
+				trigger_event = {
+					id = tgg_main.1015
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_disseisin }
+				trigger_event = {
+					id = tgg_main.1018
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_staff }
+				trigger_event = {
+					id = tgg_main.1021
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_support }
+				trigger_event = {
+					id = tgg_main.1024
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_agreement }
+				trigger_event = {
+					id = tgg_main.1027
+					days 5
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1011.a2
+		set_global_variable = tgg_central_asia_passive_rus
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = tgg_central_asia_coup }
+				trigger_event = {
+					id = tgg_main.1013
+					days 5
+				}
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						has_global_variable = tgg_central_asia_assassination_antigbr 
+						has_global_variable = tgg_afghanistan_assassination_prorus 
+					}
+				}
+				trigger_event = {
+					id = tgg_main.1016
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_disseisin }
+				trigger_event = {
+					id = tgg_main.1019
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_staff }
+				trigger_event = {
+					id = tgg_main.1022
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_support }
+				trigger_event = {
+					id = tgg_main.1025
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_agreement }
+				trigger_event = {
+					id = tgg_main.1028
+					days 5
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1011.a3
+		set_global_variable = tgg_central_asia_evasive_rus
+		hidden_effect = {
+			if = {
+				limit = { has_global_variable = tgg_central_asia_coup }
+				trigger_event = {
+					id = tgg_main.1014
+					days 5
+				}
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						has_global_variable = tgg_central_asia_assassination_antigbr 
+						has_global_variable = tgg_afghanistan_assassination_prorus 
+					}
+				}
+				trigger_event = {
+					id = tgg_main.1017
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_disseisin }
+				trigger_event = {
+					id = tgg_main.1020
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_staff }
+				trigger_event = {
+					id = tgg_main.1023
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_support }
+				trigger_event = {
+					id = tgg_main.1026
+					days 5
+				}
+			}
+			else_if = {
+				limit = { has_global_variable = tgg_central_asia_agreement }
+				trigger_event = {
+					id = tgg_main.1029
+					days 5
+				}
+			}
+		}
+	}
+}
+
+tgg_main.1012 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1012.t
+	desc = tgg_main.1012.d
+	flavor = tgg_main.1012.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1012.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+				50 = {
+					modifier = {
+						if = {
+							limit = {
+								s:STATE_AKMOLINSK.region_state:RUS.land_hq.num_garrison_units >= 30
+							}
+							add = -25
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1012.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1013 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1013.t
+	desc = tgg_main.1013.d
+	flavor = tgg_main.1013.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1013.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				33 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+				66 = {
+					modifier = {
+						if = {
+							limit = {
+								has_diplomats_expelled = c:GBR
+							}
+							add = -33
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1013.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1014 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1014.t
+	desc = tgg_main.1014.d
+	flavor = tgg_main.1014.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1014.a1
+		trigger = {
+			not = { has_global_variable = tgg_persia_title }
+		}
+		random_list = {
+			80 = {
+				tgg_change_trust_rus = {
+					TARGET = persia
+					value = 10
+				}
+				tgg_change_control_rus = {
+					TARGET = persia
+					value = 15
+				}
+			}
+			20 = {
+
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1014.a2
+		trigger = {
+			not = { has_global_variable = tgg_afghanistan_title }
+		}
+		random_list = {
+			80 = {
+				tgg_change_trust_rus = {
+					TARGET = afghanistan
+					value = 10
+				}
+				tgg_change_control_rus = {
+					TARGET = afghanistan
+					value = 20
+				}
+			}
+			20 = {
+				
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1014.a3
+		trigger = {
+			not = { has_global_variable = tgg_uzbek_title }
+		}
+		random_list = {
+			80 = {
+				tgg_change_trust_rus = {
+					TARGET = uzbek
+					value = 10
+				}
+				tgg_change_control_rus = {
+					TARGET = uzbek
+					value = 20
+				}
+			}
+			20 = {
+				
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1014.a4
+		trigger = {
+			not = { has_global_variable = tgg_kyrgyz_title }
+		}
+		random_list = {
+			80 = {
+				tgg_change_trust_rus = {
+					TARGET = kyrgyz
+					value = 10
+				}
+				tgg_change_control_rus = {
+					TARGET = kyrgyz
+					value = 20
+				}
+			}
+			20 = {
+				
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1014.a5
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1015 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1015.t
+	desc = tgg_main.1015.d
+	flavor = tgg_main.1015.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1015.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				50 = {
+					modifier = {
+						if = {
+							limit = {
+								s:STATE_AKMOLINSK.region_state:RUS.land_hq.num_garrison_units >= 15
+							}
+							add = -25
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1015.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1016 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1016.t
+	desc = tgg_main.1016.d
+	flavor = tgg_main.1016.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1016.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				33 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+				66 = {
+				}
+			}
+		}
+	}
+
+	option = {
+		name = tgg_main.1016.a2
+		default_option = yes
+		add_treasury = -100000
+		trigger = {
+			gold_reserves = 100000
+		}
+		show_as_unavailable = { always = yes }
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+				50 = {
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1016.a3
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1017 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1017.t
+	desc = tgg_main.1017.d
+	flavor = tgg_main.1017.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1017.a1
+		default_option = yes
+	}
+	option = {
+		name = tgg_main.1017.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1018 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1018.t
+	desc = tgg_main.1018.d
+	flavor = tgg_main.1018.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1018.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				66 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				33 = {
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1018.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1019 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1019.t
+	desc = tgg_main.1019.d
+	flavor = tgg_main.1019.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1019.a1
+		default_option = yes
+		add_treasury = -50000
+		trigger = {
+			gold_reserves = 50000
+		}
+		show_as_unavailable = { always = yes }
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				50 = {
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1019.a2
+		default_option = yes
+		add_treasury = -150000
+		trigger = {
+			gold_reserves = 150000
+		}
+		show_as_unavailable = { always = yes }
+		hidden_effect = {
+			random_list = {
+				75 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				25 = {
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1019.a3
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1020 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1020.t
+	desc = tgg_main.1020.d
+	flavor = tgg_main.1020.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1020.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				50 = {
+					switch = {
+						trigger = global_var:tgg_event_on_central_asia
+						1 = { 
+							tgg_change_trust_rus = {
+								TARGET = persia
+								VALUE = -10
+							}
+							c:PER = {
+								add_modifier = {
+									name = disseisin_target
+									years = 5
+								}
+							}
+							
+							add_modifier = {
+									name = disseisin_initiator_half
+									years = 5
+							}
+						}
+						2 = { 
+							tgg_change_trust_rus = {
+								TARGET = afghanistan
+								VALUE = -10
+							}
+							c:AFG = {
+								add_modifier = {
+									name = disseisin_target
+									years = 5
+								}
+							}
+							add_modifier = {
+									name = disseisin_initiator_half
+									years = 5
+							}
+						}
+						3 = { 
+							tgg_change_trust_rus = {
+								TARGET = uzbek
+								VALUE = -20
+							}
+							c:KHI = {
+								add_modifier = {
+									name = disseisin_target_half
+									years = 5
+								}
+							}
+							c:BUK = {
+								add_modifier = {
+									name = disseisin_target_half
+									years = 5
+								}
+							}
+
+							add_modifier = {
+									name = disseisin_initiator_half
+									years = 5
+							}
+						}
+						4 = { 
+							tgg_change_trust_rus = {
+								TARGET = kyrgyz
+								VALUE = -10
+							}
+							c:KOK = {
+								add_modifier = {
+									name = disseisin_target
+									years = 5
+								}
+							}
+							add_modifier = {
+									name = disseisin_initiator_half
+									years = 5
+							}
+						}
+						fallback = { always = no }
+					}
+				}
+					
+				50 = {
+					switch = {
+						trigger = global_var:tgg_event_on_central_asia
+						1 = { 
+							tgg_change_trust_rus = {
+								TARGET = persia
+								VALUE = -10
+							}
+							
+						}
+						2 = { 
+							tgg_change_trust_rus = {
+								TARGET = afghanistan
+								VALUE = -10
+							}
+							
+						}
+						3 = { 
+							tgg_change_trust_rus = {
+								TARGET = uzbek
+								VALUE = -20
+							}
+							
+						}
+						4 = { 
+							tgg_change_trust_rus = {
+								TARGET = kyrgyz
+								VALUE = -10
+							}
+						}
+						fallback = { always = no }
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tgg_main.1020.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+
+tgg_main.1021 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1021.t
+	desc = tgg_main.1021.d
+	flavor = tgg_main.1021.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1021.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				66 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				33 = {
+					modifier = {
+						if = {
+							limit = {
+								has_diplomats_expelled = c:GBR
+							}
+							add = -13
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1021.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1022 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1022.t
+	desc = tgg_main.1022.d
+	flavor = tgg_main.1022.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1022.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				100 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				0 = {
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1022.a2
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				100 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				0 = {
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1022.a3
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1023 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1023.t
+	desc = tgg_main.1023.d
+	flavor = tgg_main.1023.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1023.a1
+		default_option = yes
+	}
+	option = {
+		name = tgg_main.1023.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1024 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1024.t
+	desc = tgg_main.1024.d
+	flavor = tgg_main.1024.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1024.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				66 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				33 = {
+					
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1024.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1025 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1025.t
+	desc = tgg_main.1025.d
+	flavor = tgg_main.1025.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1025.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				100 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				0 = {
+					
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1025.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1026 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1026.t
+	desc = tgg_main.1026.d
+	flavor = tgg_main.1026.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1026.a1
+		default_option = yes
+	}
+	option = {
+		name = tgg_main.1026.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1027 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1027.t
+	desc = tgg_main.1027.d
+	flavor = tgg_main.1027.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1027.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				66 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				33 = {
+					modifier = {
+						if = {
+							limit = {
+								has_diplomats_expelled = c:GBR
+							}
+							add = -13
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = tgg_main.1027.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1028 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1028.t
+	desc = tgg_main.1028.d
+	flavor = tgg_main.1028.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1028.a1
+		default_option = yes
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_global_variable = tgg_operation_russia_win
+				}
+					
+				50 = {
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tgg_main.1028.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.1029 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.1029.t
+	desc = tgg_main.1029.d
+	flavor = tgg_main.1029.f
+	
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 1
+	is_popup = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+	}
+
+	option = {
+		name = tgg_main.1029.a1
+		default_option = yes
+	}
+	option = {
+		name = tgg_main.1029.a2
+		hidden_effect = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}
+
+tgg_main.581 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.581.t
+	desc = tgg_main.581.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.581.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.581.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.581.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = 30
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = -30
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+		c:AFG = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+	option = {
+		name = tgg_main.581.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = -30
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 40
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+		c:AFG = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.582 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.582.t
+	desc = tgg_main.582.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.582.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.582.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.582.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = 40
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = -50
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+		c:KHI = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+		c:BUK = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+	option = {
+		name = tgg_main.582.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = -30
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 50
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+		c:KHI = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+		c:BUK = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.583 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.583.t
+	desc = tgg_main.583.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.583.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.583.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.583.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = 40
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = -50
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+		c:KOK = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+	option = {
+		name = tgg_main.583.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = -30
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 50
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+		c:KOK = {
+			change_relations = {
+				country = c:RUS
+				value = 20
+			}
+		}
+	}
+}
+
+tgg_main.588 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.588.t
+	desc = tgg_main.588.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.588.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.588.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.588.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.588.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.589 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.589.t
+	desc = tgg_main.589.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.589.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.589.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.589.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.589.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5810 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5810.t
+	desc = tgg_main.5810.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5810.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5810.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5810.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = 15
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5810.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5811 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5811.t
+	desc = tgg_main.5811.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5811.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5811.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5811.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = 15
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5811.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5812 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5812.t
+	desc = tgg_main.5812.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5812.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5812.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5812.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5812.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5813 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5813.t
+	desc = tgg_main.5813.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5813.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5813.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5813.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5813.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5814 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5814.t
+	desc = tgg_main.5814.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5814.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5814.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5814.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = 15
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5814.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5815 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5815.t
+	desc = tgg_main.5815.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5815.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5815.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5815.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = 15
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5815.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5816 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5816.t
+	desc = tgg_main.5816.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5816.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5816.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5816.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = persia
+			VALUE = 5
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 5
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = -10
+		}
+	}
+	option = {
+		name = tgg_main.5816.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = -10
+		}
+	}
+}
+
+tgg_main.5817 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5817.t
+	desc = tgg_main.5817.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5817.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5817.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5817.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = afghanistan
+			VALUE = 5
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 5
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = -10
+		}
+	}
+	option = {
+		name = tgg_main.5817.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = -10
+		}
+	}
+}
+
+tgg_main.5818 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5818.t
+	desc = tgg_main.5818.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5818.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5818.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5818.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = uzbek
+			VALUE = 15
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5818.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+}
+
+tgg_main.5819 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5819.t
+	desc = tgg_main.5819.d
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5819.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5819.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5819.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_rus = {
+			TARGET = kyrgyz
+			VALUE = 15
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5819.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+}
+tgg_main.5820 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5820.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5820.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5820.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5820.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5820.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5820.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5820.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+	}
+}
+
+tgg_main.5821 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5821.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5821.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5821.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5821.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5821.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5821.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5821.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = 10
+		}
+	}
+}
+
+tgg_main.5822 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5822.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5822.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5822.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5822.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5822.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5822.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5822.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+	}
+}
+
+tgg_main.5823 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5823.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5823.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5823.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5823.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5823.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5823.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5823.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 30
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+	}
+}
+
+tgg_main.5824 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5824.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5824.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5824.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5824.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5824.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5824.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5824.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = persia
+			VALUE = 10
+		}
+		tgg_change_trust_gbr = {
+			TARGET = persia
+			VALUE = 10
+		}
+	}
+}
+
+tgg_main.5825 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5825.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5825.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5825.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5825.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5825.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5825.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5825.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = afghanistan
+			VALUE = 15
+		}
+		tgg_change_trust_gbr = {
+			TARGET = afghanistan
+			VALUE = 15
+		}
+	}
+}
+
+tgg_main.5826 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5826.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5826.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5826.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5826.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5826.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5826.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5826.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = uzbek
+			VALUE = 20
+		}
+	}
+}
+
+tgg_main.5827 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5827.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5827.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5827.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5827.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5827.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5827.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+	}
+	option = {
+		name = tgg_main.5827.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_trust_rus = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+		tgg_change_trust_gbr = {
+			TARGET = kyrgyz
+			VALUE = 20
+		}
+	}
+}
+
+tgg_main.5828 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5828.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5828.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5828.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5828.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5828.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5828.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5828.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = persia
+			VALUE = -10
+		}
+	}
+}
+tgg_main.5829 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5829.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5829.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5829.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5829.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5829.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5829.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5829.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = afghanistan
+			VALUE = -10
+		}
+	}
+}
+
+tgg_main.5830 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5830.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5830.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5830.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5830.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5830.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5830.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5830.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = uzbek
+			VALUE = -10
+		}
+	}
+}
+
+tgg_main.5831 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_main.5831.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5831.d1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5831.d2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = tgg_main.5831.f1
+				trigger = {
+					has_global_variable = tgg_central_asia_active_rus
+				}
+			}
+			triggered_desc = { 
+				desc = tgg_main.5831.f2
+				trigger = {
+					has_global_variable = tgg_central_asia_passive_rus
+				}
+			}
+		}
+	}
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:GBR = {
+			save_scope_as = gbr_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+		c:AFG = {
+			save_scope_as = afg_scope
+		}
+		c:PER = {
+			save_scope_as = persia_scope
+		}
+		
+	}
+
+	option = {
+		name = tgg_main.5831.a1
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_active_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = -20
+		}
+	}
+	option = {
+		name = tgg_main.5831.a2
+		default_option = yes
+		trigger = {
+			has_global_variable = tgg_central_asia_passive_rus
+		}
+		tgg_change_control_gbr = {
+			TARGET = kyrgyz
+			VALUE = -10
+		}
+	}
+}
+

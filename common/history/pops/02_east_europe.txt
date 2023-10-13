@@ -439,14 +439,14 @@
 		}
 	}
 	s:STATE_ESTONIA = {
-		region_state:RUS = {
+		region_state:EST = {
 			create_pop = {
 				culture = estonian
-				size = 573800
+				size = 373800
 			}
 			create_pop = {
 				culture = russian
-				size = 17392
+				size = 10392
 			}
 			create_pop = {
 				culture = swedish
@@ -454,7 +454,21 @@
 			}
 			create_pop = {
 				culture = north_german
-				size = 14600
+				size = 8600
+			}
+		}
+		region_state:LIV = {
+		create_pop = {
+				culture = estonian
+				size = 201800
+			}
+		create_pop = {
+				culture = russian
+				size = 7000
+			}
+		create_pop = {
+				culture = north_german
+				size = 6600
 			}
 		}
 	}
@@ -462,19 +476,11 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = latvian
-				size = 1047496
-			}
-			create_pop = {
-				culture = north_german
-				size = 71996
-			}
-			create_pop = {
-				culture = estonian
-				size = 6000
+				size = 200560
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 53408
+				size = 6008
 			}
 			create_pop = {
 				culture = ugrian
@@ -487,7 +493,47 @@
 			}
 			create_pop = {
 				culture = russian
-				size = 21000
+				size = 15000
+			}
+		}
+		region_state:COU = {
+			create_pop = {
+				culture = latvian
+				size = 402450
+			}
+			create_pop = {
+				culture = north_german
+				size = 35615
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 33408
+			}
+			create_pop = {
+				culture = russian
+				size = 3102
+			}
+		}
+		region_state:LIV = {
+			create_pop = {
+				culture = latvian
+				size = 400320
+			}
+			create_pop = {
+				culture = north_german
+				size = 34165
+			}
+			create_pop = {
+				culture = estonian
+				size = 6005
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 12450
+			}
+			create_pop = {
+				culture = russian
+				size = 3024
 			}
 		}
 	}

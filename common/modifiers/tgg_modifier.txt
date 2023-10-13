@@ -1,0 +1,105 @@
+﻿1848_revolution = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_defense_mult = 30
+	unit_offense_mult = 5.5
+	unit_morale_recovery_mult = 10
+	unit_recovery_rate_add = 20
+}
+
+1848_revolution_target = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	unit_defense_mult = -0.2
+	unit_offense_mult = -0.2
+}
+
+ egyptian_war = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_defense_mult = 0.75
+	unit_army_offense_mult = 0.5
+}
+
+gendarme_of_europe = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_authority_mult = 0.1
+	country_influence_mult = 0.25
+	country_prestige_mult = 0.1
+	country_max_declared_interests_add = 5
+}
+
+sick_gendarme_of_europe = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_mult = -0.05
+	country_influence_mult = -0.1
+	country_prestige_mult = -0.05
+	country_max_declared_interests_add = -1
+}
+
+use_influence_150 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_influence_add = -150
+}
+
+use_influence_125 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_influence_add = -125
+}
+
+use_influence_100 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_influence_add = -100
+}
+
+use_influence_75 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_influence_add = -75
+}
+
+use_influence_50 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_influence_add = -50
+}
+
+use_authority_100 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_add = -100
+}
+
+use_authority_50 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_add = -50
+}
+
+use_bureaucracy_100 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_bureaucracy_add = -100
+}
+
+use_bureaucracy_50 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_bureaucracy_add = -50
+}
+
+disseisin_target = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_expenses_add = 100000
+}
+
+disseisin_target_half = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_expenses_add = 50000
+}
+
+disseisin_initiator_half = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_income_add = 50000
+}
+
+disseisin_initiator_alone = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_income_add = 100000
+}
+
+tgg_bonus = {
+     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_influence_add = 1000
+}

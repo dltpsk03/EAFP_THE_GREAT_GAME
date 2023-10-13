@@ -1,15 +1,34 @@
 ﻿l_korean:
  ####### 기능
+
+ 1848PRU:0 "프로이센 시민 혁명"
+ 1848PRU_ADJ:0 "시민 혁명"
+ 1848MOL:0 "몰다비아 시민 혁명"
+ 1848MOL_ADJ:0 "시민 혁명"
+ 1848WAL:0 "왈라키아 시민 혁명"
+ 1848WAL_ADJ:0 "시민 혁명"
+ 1848_revolution_name:0 "1848 혁명"
   
  ####### 저널
 
  je_gendarme_of_europe:0 "유럽의 헌병"
  je_gendarme_of_europe_reason:0 "나폴레옹 전쟁 이래로, 우리는 유럽의 균형을 수호해 오고 있습니다. 극단적인 대외정책에 대해 '반동주의의 화신'이라며 위협을 느끼는 국가들도 있지만 우리는 이 역할을 끝까지 수행할 것입니다."
 
- gendarme_of_europe_tt:0 "[ROOT.GetCountry.GetCustom('gendarme_of_europe_custom_loc')]"
+ gendarme_of_europe_tt:0 "혁명을 막아야한다"
 
- gendarme_of_europe_unknown:0 "아직 어떤 일이 일어날 지 알 수 없다."
- gendarme_of_europe_known:0 "급속도로 퍼지는 혁명을 막아야한다."
+ 1848_hungary:0 "헝가리 혁명 개입"
+ 1848_hungary_desc:0 "헝가리를 비롯한 오스트리아 제국 각지에서 혁명이 일어나고 있다, 이것이 더 번지기 전에 개입하여야한다."
+ 1848_hungary_tt:0 "폴란드 본부에 32대대 이상 보유"
+
+ 1848_romania:0 "왈라키아, 몰다비아 혁명 개입"
+ 1848_romania_desc:0 "왈라키아와 몰다비아 각지에서 혁명이 일어나고 있다, 이것이 더 번지기 전에 개입하여야한다."
+ 1848_romania_tt:0 "도나우 본부에 10대대 이상 보유"
+
+ 1848_poland:0 "폴란드 혁명 진압"
+ 1848_poland_desc:0 "폴란드 민족이 있는 지역에서 혁명이 일어나고 있다, 이것이 더 번지기 전에 개입하여야한다."
+ 1848_poland_tt:0 "폴란드 본부에 25대대 이상 보유"
+
+ gendarme_of_europe_no_intervention_tt:0 "아무것도 하지 않음"
 
  je_crimean_war:0 "[ROOT.GetCountry.GetCustom('crimean_war_custom_loc')]"
  je_crimean_war_reason:0 "[ROOT.GetCountry.GetCustom('crimean_war_reason_custom_loc')]"
@@ -22,9 +41,16 @@
  crimean_war_looming_war_reason:0 "다르달넬스와 보스포루스 두개의 해협은 사실상 봉쇄되었고, 지중해로 나아갈 수 있는 길목을 확보하는데에 실패하였다. 발칸반도의 슬라브 민족을 지키기 위해서라도 오스만 제국을 분쇄해야한다."
  crimean_war_reason:0 "결국 전쟁을 벌어지고 말았다. 우리의 목적은, 적들을 분쇄하고 우리의 지중해에서의 영향권을 확보하는 것이다."
 
+ wip:0 "제작중"
+
  
  ####### 모디파이어
 
+ 1848_revolution:0 "혁명의 불씨"
+ 1848_revolution_target:0 "혁명 타겟"
+ egyptian_war:0 "이집트의 혼"
+ gendarme_of_europe:0 "유럽의 진정한 헌병"
+ sick_gendarme_of_europe:0 "유럽의 병든 헌병"
 
  ####### 이벤트
  # 000번대 = 시스템
@@ -59,10 +85,10 @@
  #이집트측 이벤트
 
  tgg_russia.104.t:0 "1840 런던 회의"
- tgg_russia.104.d:0 "런던에서 벌어진 강대국들의 회의 결과, 우리에게 다음 항목이 제안되었다.."
+ tgg_russia.104.d:0 "런던에서 벌어진 강대국들의 회의 결과, 우리에게 다음 항목이 제안되었다."
  tgg_russia.104.f:0 ""이집트의 왈리 메흐메트 알리는 오스만 제국 내의 아라비아, 메카, 메디나, 크레타등의 지역에서 즉시 군대를 철수한다.\n그 대가로 대영제국, 오스트리아 제국, 프로이센, 러시아 제국은 메흐메트 알리와 그의 상속인에게 이집트와 아크레 에얄렛에 대한 영구적인 통제권을 제공한다.\n20일 내로 제안에 동의하지 않을 시, 모든 제안은 무효화된다.""
  tgg_russia.104.a:0 "어째서 그들의 의견을 따라야하지?" #영국과 오스트리아가 참전함
- tgg_russia.104.a:0 "어쩔 수 없다. 동의하라" #휴전함
+ tgg_russia.104.b:0 "어쩔 수 없다. 동의하라" #휴전함
   
  #이집트 거절시
  tgg_russia.105.t:0 "동방위기 발발"
@@ -109,16 +135,70 @@
  tgg_russia.201.t:0 "시칠리아 반란!"
  tgg_russia.201.d:0 "시칠리아에서 반란이 일어났다."
  tgg_russia.201.f:0 "그들은 팔레므로를 중심으로 조직하여, 실질적을 독립을 하여 시칠리아 왕국을 재건하고 나섰습니다. 단순히 외국에서 벌어진 반란으로 볼 수 있지만, 뭔가 조짐이 좋지 않습니다."
- tgg_russia.201.a:0 "지켜보자"
+ tgg_russia.201.a:0 "지켜보자."
 
- #2월 혁명이 트리거
+ 
+ tgg_russia.203.t:0 "[SCOPE.sCountry('pru_scope').GetName] 혁명"
+ tgg_russia.203.d:0 "[SCOPE.sCountry('pru_scope').GetName]의 중심지 베를린에서 반란이 일어났다."
+ tgg_russia.203.f:0 "[SCOPE.sCountry('pru_scope').GetName]에서 혁명이 일어났다. 이들은 자유주의를 갈망하며 봉기를 일으켰고, 새로운 헌법을 요구했다."
+ tgg_russia.203.a:0 "흠."
 
- tgg_russia.202.t:0 "프랑스에서의 혁명!"
- tgg_russia.202.d:0 "프랑스에서 다시 한번 혁명이 일어났다."
- tgg_russia.202.f:0 "루이필라프가 퇴위하고 다른 사람이 지도자에 올랐다. 나폴레옹의 재림이 되지 않기를 바래야할 뿐이다."
- tgg_russia.202.a:0 "더 지켜보자"
+ tgg_russia.205.t:0 "폴란드인의 봉기"
+ tgg_russia.205.d:0 "[SCOPE.sCountry('pru_scope').GetName]의 [SCOPE.sCountry('pos_scope').GetName]에서 봉기가 일어났다."
+ tgg_russia.205.f:0 "베를린에서의 혁명에 이어, 폴란드인이 독립국가를 요구하며 봉기를 일으켰다. 이를 지켜보고 있으면 우리의 속국, [SCOPE.sCountry('pol_scope').GetName]에게도 영향을 줄 것이다. \n\n(저널을 확인하세요.)"
+ tgg_russia.205.a:0 "행동을 개시하자."
 
- #203 -> 독일
+ tgg_russia.207.t:0 "빈 봉기"
+ tgg_russia.207.d:0 "[SCOPE.sCountry('aus_scope').GetName]의 수도에서 봉기가 일어났다."
+ tgg_russia.207.f:0 "유럽 각지의 혁명의 영향을 받아, 빈에서도 자유주의 혁명이 일어났다. 이는 이내 진압되었지만, 더 큰 소요의 발생을 예견하고 있다."
+ tgg_russia.207.a:0 "지켜보자."
 
+ tgg_russia.208.t:0 "프라하 슬라브 회의"
+ tgg_russia.208.d:0 "[SCOPE.sCountry('aus_scope').GetName] 내의 슬라브인들이 모여 회의를 열었다"
+ tgg_russia.208.f:0 "이 회의에는 237명의 체코-슬로바키아인과 42명의 남슬라브인, 61명의 폴란드-우크라이나인이 참가했다. 이 회의에서 슬라브 민족에 대한 억압을 종식하기 위한 선언문을 작성하였다."
+ tgg_russia.208.a:0 "지켜보자."
+
+ tgg_russia.210.t:0 "헝가리 봉기"
+ tgg_russia.210.d:0 "헝가리인들이 [SCOPE.sCountry('aus_scope').GetName]에 대해 봉기하였다."
+ tgg_russia.210.f:0 "헝가리인들은 [SCOPE.sCountry('aus_scope').GetName]의 많은 타협에도 불구하고, 독립국가를 원했고, 이를 원치 않은 [SCOPE.sCountry('aus_scope').GetName]의 선공으로 전쟁이 시작되었다. \n\n (저널을 확인하세요.)"
+ tgg_russia.210.a:0 "심각하군."
+
+ tgg_russia.212.t:0 "[SCOPE.sCountry('mol_scope').GetName] 시민 혁명"
+ tgg_russia.212.d:0 "[SCOPE.sCountry('mol_scope').GetName]의 시민들이, [SCOPE.sCountry('tur_scope').GetName]와 [SCOPE.sCountry('rus_scope').GetName]의 지배에 저항하여 반란을 일으켰다."
+ tgg_russia.212.f:0 "몰다비아인이 제안한 개혁안을, 우리가 거절하자 자유주의자와 낭만주의자들이 연합하여 기습적으로 시위를 벌였고, 이는 곧 혁명으로 확대되었다. 이를 진압하여야한다."
+ tgg_russia.212.a:0 "조치를 취하라."
+
+ tgg_russia.214.t:0 "[SCOPE.sCountry('wal_scope').GetName] 시민 혁명"
+ tgg_russia.214.d:0 "[SCOPE.sCountry('wal_scope').GetName]의 시민들이, [SCOPE.sCountry('tur_scope').GetName]와 [SCOPE.sCountry('rus_scope').GetName]의 지배에 저항하여 반란을 일으켰다."
+ tgg_russia.214.f:0 "[SCOPE.sCountry('mol_scope').GetName]에서 일어난 혁명에 이어, [SCOPE.sCountry('wal_scope').GetName]에서도 혁명이 일어났다. 시급히 진압하지 않으면 발칸반도에서의 영향력을 잃어버릴 것이다.\n\n(저널을 확인하세요.)"
+ tgg_russia.214.a:0 "조치를 취하라."
+
+ tgg_russia.215.t:0 "프로이센에 일어난 폴란드인 반란에 개입"
+ tgg_russia.215.d:0 "프로이센령 포젠에서 일어난 폴란드인의 독립운동을 진압하기로 결정하였다."
+ tgg_russia.215.f:0 "빠르게 번지는 폴란드 독립운동을 진압하지 않으면, 우리 영토까지 번질 가능성이 있다. 빠르게 이를 진압하여야한다."
+ tgg_russia.215.a:0 "군사작전을 개시하라."
+ tgg_russia.215.b:0 "한 번 더 생각해본다."
+
+ tgg_russia.216.t:0 "오스트리아를 향한 원군 파견"
+ tgg_russia.216.d:0 "헝가리의 독립운동이 급속도로 번지고 있다."
+ tgg_russia.216.f:0 "빠르게 번지는 독립운동을 진압하지 않으면, 우리 영토의 다른 소수민족들에게 영향을 줄 가능성이 있다. 빠르게 이를 진압하여야한다."
+ tgg_russia.216.a:0 "군사작전을 개시하라."
+ tgg_russia.216.b:0 "한 번 더 생각해본다."
+
+ tgg_russia.217.t:0 "몰다비아, 왈라키아를 향한 진군"
+ tgg_russia.217.d:0 "오스만제국과의 공동통치령인 몰다비아, 왈라키아에서의 반란이 일어났다."
+ tgg_russia.217.f:0 "오스만과 같이 하는 것은 꺼림칙한 일이지만, 이를 진압하지 않으면 우리 영토의 다른 소수민족들에게 영향을 줄 가능성이 있다. 이를 진압하여야한다."
+ tgg_russia.217.a:0 "군사작전을 개시하라."
+ tgg_russia.217.b:0 "한 번 더 생각해본다."
+ 
+ tgg_russia.218.t:0 "#V 유럽의 헌병#! : 완료"
+ tgg_russia.218.d:0 "유럽 각지에서 일어난 반란을 성공적으로 진압했다."
+ tgg_russia.218.f:0 "이제 어느 누구도, 자유주의를 운운하며 혁명을 일으킬 생각을 하지 않을 것이다."
+ tgg_russia.218.a:0 "만세!"
+
+ tgg_russia.219.t:0 "#V 유럽의#! #red 병든#! #V 헌병#!"
+ tgg_russia.219.d:0 "유럽에서 일어난 반란을 해결하는데 도움을 주지 못했다."
+ tgg_russia.219.f:0 "유럽에서의 우리의 영향력은 실추되었으며, 유럽의 헌병이라는 말도 이제는 우스갯소리가 되었다."
+ tgg_russia.219.a:0 "안돼..."
  
  

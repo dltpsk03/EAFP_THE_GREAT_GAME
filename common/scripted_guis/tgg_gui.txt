@@ -1,0 +1,129 @@
+﻿renew_gbr_influence_list = {
+	effect = {
+		clear_global_variable_list = gbr_influence_list
+		every_country = {
+			limit = {
+				OR = {
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = alliance
+					}
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = personal_union
+					}
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = dominion
+					}
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = customs_union
+					}
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = puppet
+					}
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = vassal
+					}
+					has_diplomatic_pact = {
+							who = c:GBR
+							type = protectorate
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = gbr_influence_list
+				target = THIS
+			}
+		}
+	}
+}
+
+renew_rus_influence_list = {
+	effect = {
+		clear_global_variable_list = rus_influence_list
+		every_country = {
+			limit = {
+				OR = {
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = alliance
+					}
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = personal_union
+					}
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = dominion
+					}
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = customs_union
+					}
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = puppet
+					}
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = vassal
+					}
+					has_diplomatic_pact = {
+							who = c:RUS
+							type = protectorate
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = rus_influence_list
+				target = THIS
+			}
+		}
+	}
+}
+
+tgg_exposition_button = {
+	effect = {
+		set_global_variable = {
+			name = tgg_temp1
+			months = 36
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.1000
+			}
+		}
+	}
+}
+
+tgg_complication_button = {
+	effect = {
+		set_global_variable = {
+			name = tgg_temp2
+			months = 36
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.1006
+			}
+		}
+	}
+}
+
+tgg_operation_button = {
+	effect = {
+		set_global_variable = {
+			name = tgg_temp3
+			months = 36
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.1011
+			}
+		}
+	}
+}

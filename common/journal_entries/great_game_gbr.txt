@@ -1,0 +1,3601 @@
+﻿#It's only for AI
+
+je_tgg_central_asia = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	is_shown_when_inactive = {
+		c:GBR = root
+	}
+
+	immediate = {
+		set_global_variable = {
+			name = calc_influence_gbr
+			value = 0
+		}
+		add_modifier = {
+			name = tgg_bonus
+		}
+	}
+
+	scripted_button = tgg_central_asia
+
+
+	possible = {
+		c:GBR = root
+		game_date > 1836.7.31
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = great_game_win_tt
+			has_global_variable = uzbek_win_gbr
+			has_global_variable = persia_win_gbr
+			has_global_variable = afghanistan_win_gbr
+			has_global_variable = kyrgyz_win_gbr
+		}
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.1
+			}
+		}
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = great_game_lose_tt
+			has_global_variable = uzbek_win_rus
+			has_global_variable = persia_win_rus
+			has_global_variable = afghanistan_win_rus
+			has_global_variable = kyrgyz_win_rus
+		}
+	}
+	
+	on_fail = {
+		trigger_event = {
+			id = tgg_main.2
+		}
+	}
+
+	invalid = {
+		custom_tooltip = {
+			text = great_game_end_tt
+			has_global_variable = anglo_russo_treaty_var
+		}
+	}
+
+	on_invalid = {
+		trigger_event = {
+			id = tgg_main.3
+		}
+	}
+
+	weight = 9000
+
+    should_be_pinned_by_default = yes
+}
+
+tgg_persia_coup = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.57
+			}
+		}
+		remove_global_variable = tgg_operation_gbr
+		remove_global_variable = tgg_central_asia_coup
+		remove_global_variable = tgg_event_on_central_asia
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+		
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.58
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		val0e = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_coup = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.61
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.581
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_coup = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.62
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.582
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_coup = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.63
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.583
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_operation = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.57
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.584
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_operation = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.61
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.585
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_operation = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.62
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.586
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_operation = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.63
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.587
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_assassination_prorus = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.64
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.588
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_assassination_prorus = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.65
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.589
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_assassination_prorus = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.66
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5810
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_assassination_prorus = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.67
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5811
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_assassination_antigbr = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.68
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5812
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_assassination_antigbr = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.69
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5813
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_assassination_antigbr = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.70
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5814
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_assassination_antigbr = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.71
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5815
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_disseisin = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.72
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5816
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_disseisin = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.73
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5817
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_disseisin = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.74
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5818
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+	great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_disseisin = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.75
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5819
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_staff = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.76
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5820
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_staff = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.77
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5821
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_staff = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.78
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5822
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_staff = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.79
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5823
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_support = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.80
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5824
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_support = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.81
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5825
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_support = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.82
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5826
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_support = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.83
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5827
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_persia_agreement = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.84
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5828
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_afghanistan_agreement = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.85
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5829
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_uzbek_agreement = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.86
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5830
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+tgg_kyrgyz_agreement = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	immediate = {
+		set_global_variable = {
+			name = tgg_operation_gbr
+			value = 0
+		}
+		calc_influence_gbr_effect = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_global_variable = {
+				name = tgg_operation_gbr
+				add = 1
+			}
+			switch = {
+				trigger = global_var:tgg_operation_gbr
+				1 = { 
+					c:RUS = {
+						trigger_event = tgg_main.54
+					} 
+				}
+				10 = { 
+					c:RUS = {
+						trigger_event = tgg_main.55
+					} 
+				}
+				20 = { 
+					c:RUS = {
+						trigger_event = tgg_main.56
+					} 
+				}
+				fallback = { always = no }
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+	}
+
+	on_complete = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_main.87
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+	fail = {
+		OR = {
+			has_global_variable = tgg_operation_russia_win
+			has_global_variable = tgg_operation_russia_intervention
+			has_global_variable = tgg_operation_russia_threat
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = { has_global_variable = tgg_operation_russia_win }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.5831
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_intervention }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.59
+				}
+			}
+		}
+		else_if = {
+			limit = { has_global_variable = tgg_operation_russia_threat }
+			c:RUS = {
+				trigger_event = {
+					id = tgg_main.60
+				}
+			}
+		}
+		great_game_reset = yes
+		calc_bureaucracy_rus_effect = yes
+		calc_authority_rus_effect = yes
+		calc_influence_rus_effect = yes
+	}
+
+
+	goal_add_value = {
+		value = 30
+	}
+
+	current_value = {
+		value = global_var:tgg_operation_gbr
+	}
+
+	weight = 9000
+
+    progressbar = yes
+
+	should_be_pinned_by_default = yes
+}

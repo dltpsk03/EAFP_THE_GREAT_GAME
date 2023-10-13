@@ -1,0 +1,1805 @@
+﻿namespace = tgg_russia
+
+tgg_russia.100 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.100.t
+	desc = tgg_russia.100.d
+	flavor = tgg_russia.100.f
+	
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.100.a
+		default_option = yes
+	}
+}
+
+tgg_russia.101 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.101.t
+	desc = tgg_russia.101.d
+	flavor = tgg_russia.101.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:TUR = {
+			create_diplomatic_play = {
+				type = dp_return_state
+				escalation = 81
+				target_state = s:STATE_SYRIA.region_state:EGY 
+
+				add_war_goal = {
+					holder = c:EGY
+					type = humiliation
+					target_country = c:TUR
+				}
+			}
+		}
+		trigger_event = {
+			id = tgg_russia.102
+			days = 40
+		}
+		c:EGY = {
+			add_modifier = {
+				name = egyptian_war
+				months = 12
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.101.a
+		default_option = yes
+	}
+}
+
+tgg_russia.102 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.102.t
+	desc = tgg_russia.102.d
+	flavor = tgg_russia.102.f
+	
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.102.a
+		default_option = yes
+		trigger_event = {
+			id = tgg_russia.103
+			days = 50
+		}
+	}
+}
+
+tgg_russia.103 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.103.t
+	desc = tgg_russia.103.d
+	flavor = tgg_russia.103.f
+	
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.103.a
+		default_option = yes
+		c:EGY = {
+			trigger_event = {
+				id = tgg_russia.104
+				days = 20
+			}
+		}
+	}
+}
+
+tgg_russia.104 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.104.t
+	desc = tgg_russia.104.d
+	flavor = tgg_russia.104.f
+	
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+	option = {
+		name = tgg_russia.104.a
+		default_option = yes
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.105
+				days = 10
+			}
+		}
+		every_diplomatic_play = {
+			limit = { is_war = yes is_diplomatic_play_participant = c:TUR }
+			add_initiator_backers = { c:AUS c:GBR }
+		}
+		ai_chance = {
+			base = 75
+		}
+	}
+	option = {
+		name = tgg_russia.104.b
+		every_diplomatic_play = {
+			limit = { is_war = yes is_diplomatic_play_participant = c:TUR }
+			end_play = yes
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.106
+				days = 10
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+tgg_russia.105 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.105.t
+	desc = tgg_russia.105.d
+	flavor = tgg_russia.105.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.105.a
+		default_option = yes
+	}
+}
+
+tgg_russia.106 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.106.t
+	desc = tgg_russia.106.d
+	flavor = tgg_russia.106.f
+	
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.106.a
+		default_option = yes
+	}
+}
+
+tgg_russia.108 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.108.t
+	desc = tgg_russia.108.d
+	flavor = tgg_russia.108.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		trigger_event = {
+			id = tgg_russia.109
+			days = { 30 90 }
+		}
+	}
+
+	option = {
+		name = tgg_russia.108.a
+		default_option = yes
+	}
+}
+
+tgg_russia.109 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.109.t
+	desc = tgg_russia.109.d
+	flavor = tgg_russia.109.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		set_variable = ruin_unkiar_skelessi_treaty
+	}
+
+	option = {
+		name = tgg_russia.109.a
+		default_option = yes
+		change_relations = {
+			country = c:GBR
+			value = -50
+		}
+		change_relations = {
+			country = c:TUR
+			value = -50
+		}
+	}
+}
+
+tgg_russia.200 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.200.t
+	desc = tgg_russia.200.d
+	flavor = tgg_russia.200.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.201
+				days = 10
+			}
+		}
+		
+	}
+
+	option = {
+		name = tgg_russia.200.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+
+tgg_russia.201 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.201.t
+	desc = tgg_russia.201.d
+	flavor = tgg_russia.201.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.201.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.202 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.202.t
+	desc = tgg_russia.202.d
+	flavor = tgg_russia.202.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		create_country = {
+			tag = 1848PRU
+			origin = this
+			province = p:xF8D457
+			on_created = {
+				set_ruling_interest_groups = { ig_intelligentsia }
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_parliamentary_republic
+						}
+					}
+					activate_law = law_type:law_parliamentary_republic
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_elected_bureaucrats
+						}
+					}
+					activate_law = law_type:law_elected_bureaucrats
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_universal_suffrage
+						}
+					}
+					activate_law = law_type:law_universal_suffrage
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_women_in_the_workplace
+						}
+					}
+					activate_law = law_type:law_women_in_the_workplace
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_commercialized_agriculture
+						}
+					}
+					activate_law = law_type:law_commercialized_agriculture
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_total_separation
+						}
+					}
+					activate_law = law_type:law_total_separation
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_mass_conscription
+						}
+					}
+					activate_law = law_type:law_mass_conscription
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_compulsory_primary_school
+						}
+					}
+					activate_law = law_type:law_compulsory_primary_school
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_public_schools
+						}
+					}
+					activate_law = law_type:law_public_schools
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_interventionism
+						}
+					}
+					activate_law = law_type:law_interventionism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_regulatory_bodies
+						}
+					}
+					activate_law = law_type:law_regulatory_bodies
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_national_guard
+						}
+					}
+					activate_law = law_type:law_national_guard
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_right_of_assembly
+						}
+					}
+					activate_law = law_type:law_right_of_assembly
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_closed_borders
+						}
+					}
+					activate_law = law_type:law_closed_borders
+				}
+				add_modifier = {
+					name = 1848_revolution
+					months = 8
+					is_decaying = yes
+				}
+				call_election = {
+					months = 1
+				}
+				create_diplomatic_play = {
+					name = 1848_revolution_name
+					target_country = c:PRU
+					type = dp_revolution
+					escalation = 80
+				}
+			}
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.203
+				days = 10
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.202.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+tgg_russia.203 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.203.t
+	desc = tgg_russia.203.d
+	flavor = tgg_russia.203.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:PRU = {
+			save_scope_as = pru_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.203.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.204 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.204.t
+	desc = tgg_russia.204.d
+	flavor = tgg_russia.204.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		
+		create_country = {
+			tag = POL
+			origin = this
+			province = p:xFCC7B7
+			province = p:xC02121
+			province = p:x41E0A0
+			province = p:xF962B2
+			province = p:x635336
+			province = p:x1FA1E1
+			on_created = {
+				add_modifier = {
+					name = 1848_revolution
+					months = 12
+					is_decaying = yes
+				}
+				create_diplomatic_play = {
+					name = 1848_revolution_name
+					target_country = c:POS
+					type = dp_revolution
+					escalation = 80
+				}
+				s:STATE_POSEN.region_state:POL = {
+					create_building = {
+						building = "building_barracks"
+						level = 5
+						reserves = 1
+					}
+				}
+			}
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.205
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.204.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+
+tgg_russia.205 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.205.t
+	desc = tgg_russia.205.d
+	flavor = tgg_russia.205.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		set_global_variable = 1848_poland_start
+		c:PRU = {
+			save_scope_as = pru_scope
+		}
+		c:POS = {
+			save_scope_as = pos_scope
+		}
+		c:CPL = {
+			save_scope_as = pol_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.205.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.206 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.206.t
+	desc = tgg_russia.206.d
+	flavor = tgg_russia.206.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.207
+				days = { 10 30 }
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.206.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+
+tgg_russia.207 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.207.t
+	desc = tgg_russia.207.d
+	flavor = tgg_russia.207.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:AUS = {
+			save_scope_as = aus_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.207.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.208 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.208.t
+	desc = tgg_russia.208.d
+	flavor = tgg_russia.208.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:AUS = {
+			save_scope_as = aus_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.208.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.209 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.209.t
+	desc = tgg_russia.209.d
+	flavor = tgg_russia.209.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		
+		c:AUS = {
+			add_modifier = {
+				name = 1848_revolution_target
+				months = 5
+				is_decaying = yes
+			}
+		}
+		create_country = {
+			tag = HUN
+			origin = this
+			province = p:xAB6CAC
+			province = p:x5C685C
+			province = p:x51E0E0
+			province = p:xC97829
+			province = p:x764B36
+			province = p:xCFDFDF
+			on_created = {
+				add_modifier = {
+					name = 1848_revolution
+					months = 15
+					is_decaying = yes
+				}
+				c:HUN = {
+					trigger_event = {
+						id = tgg_russia.2091
+						days = 80
+					}
+					trigger_event = {
+						id = tgg_russia.2092
+						days = 200
+					}
+				}
+				create_diplomatic_play = {
+					name = 1848_revolution_name
+					target_country = c:AUS
+					type = dp_conquer_state
+					escalation = 80
+					target_state = s:STATE_CENTRAL_HUNGARY.region_state:AUS
+					add_war_goal = {
+						holder = c:HUN
+						type = conquer_state
+						target_state = s:STATE_TRANSDANUBIA.region_state:AUS
+					}
+					add_war_goal = {
+						holder = c:AUS
+						type = conquer_state
+						target_state = s:STATE_CENTRAL_HUNGARY.region_state:HUN
+					}
+					add_war_goal = {
+						holder = c:AUS
+						type = conquer_state
+						target_state = s:STATE_TRANSDANUBIA.region_state:HUN
+					}
+				}
+				s:STATE_CENTRAL_HUNGARY.region_state:HUN = {
+					create_building = {
+						building = "building_barracks"
+						level = 10
+						reserves = 1
+					}
+				}
+				s:STATE_TRANSDANUBIA.region_state:HUN = {
+					create_building = {
+						building = "building_barracks"
+						level = 5
+						reserves = 1
+					}
+				}
+			}
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.210
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.209.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+
+tgg_russia.2091 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.2091.t
+	desc = tgg_russia.2091.d
+	flavor = tgg_russia.2091.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+		exists = c:HUN
+	}
+
+	immediate = {
+		s:STATE_CENTRAL_HUNGARY.region_state:AUS = { set_state_owner = c:HUN }
+	}
+
+	option = {
+		name = tgg_russia.2091.a
+	}
+}
+
+tgg_russia.2092 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.2092.t
+	desc = tgg_russia.2092.d
+	flavor = tgg_russia.2092.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+		exists = c:HUN
+	}
+
+	immediate = {
+		s:STATE_TRANSDANUBIA.region_state:AUS = { set_state_owner = c:HUN }
+	}
+
+	option = {
+		name = tgg_russia.2092.a
+	}
+}
+
+tgg_russia.210 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.210.t
+	desc = tgg_russia.210.d
+	flavor = tgg_russia.210.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		set_global_variable = 1848_hungary_start
+		c:AUS = {
+			save_scope_as = aus_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.210.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.210 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.210.t
+	desc = tgg_russia.210.d
+	flavor = tgg_russia.210.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:AUS = {
+			save_scope_as = aus_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.210.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.211 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.211.t
+	desc = tgg_russia.211.d
+	flavor = tgg_russia.211.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		create_country = {
+			tag = 1848MOL
+			origin = this
+			province = p:x946A66
+			province = p:x35CE84
+			province = p:x80D8F3
+			on_created = {
+				set_ruling_interest_groups = { ig_intelligentsia }
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_parliamentary_republic
+						}
+					}
+					activate_law = law_type:law_parliamentary_republic
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_elected_bureaucrats
+						}
+					}
+					activate_law = law_type:law_elected_bureaucrats
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_universal_suffrage
+						}
+					}
+					activate_law = law_type:law_universal_suffrage
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_women_in_the_workplace
+						}
+					}
+					activate_law = law_type:law_women_in_the_workplace
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_commercialized_agriculture
+						}
+					}
+					activate_law = law_type:law_commercialized_agriculture
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_total_separation
+						}
+					}
+					activate_law = law_type:law_total_separation
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_mass_conscription
+						}
+					}
+					activate_law = law_type:law_mass_conscription
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_compulsory_primary_school
+						}
+					}
+					activate_law = law_type:law_compulsory_primary_school
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_public_schools
+						}
+					}
+					activate_law = law_type:law_public_schools
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_interventionism
+						}
+					}
+					activate_law = law_type:law_interventionism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_regulatory_bodies
+						}
+					}
+					activate_law = law_type:law_regulatory_bodies
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_national_guard
+						}
+					}
+					activate_law = law_type:law_national_guard
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_right_of_assembly
+						}
+					}
+					activate_law = law_type:law_right_of_assembly
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_closed_borders
+						}
+					}
+					activate_law = law_type:law_closed_borders
+				}
+				add_modifier = {
+					name = 1848_revolution
+					months = 12
+					is_decaying = yes
+				}
+				call_election = {
+					months = 1
+				}
+				create_diplomatic_play = {
+					name = 1848_revolution_name
+					target_country = c:MOL
+					type = dp_revolution
+					escalation = 80
+				}
+			}
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.212
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.211.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+
+tgg_russia.212 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.212.t
+	desc = tgg_russia.212.d
+	flavor = tgg_russia.212.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:MOL = {
+			save_scope_as = mol_scope
+		}
+		c:TUR = {
+			save_scope_as = tur_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.212.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.213 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.213.t
+	desc = tgg_russia.213.d
+	flavor = tgg_russia.213.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		
+		create_country = {
+			tag = 1848WAL
+			origin = this
+			province = p:xD11E19
+			province = p:x81C7F3
+			province = p:x9E90C5
+			on_created = {
+				set_ruling_interest_groups = { ig_intelligentsia }
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_parliamentary_republic
+						}
+					}
+					activate_law = law_type:law_parliamentary_republic
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_elected_bureaucrats
+						}
+					}
+					activate_law = law_type:law_elected_bureaucrats
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_universal_suffrage
+						}
+					}
+					activate_law = law_type:law_universal_suffrage
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_women_in_the_workplace
+						}
+					}
+					activate_law = law_type:law_women_in_the_workplace
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_commercialized_agriculture
+						}
+					}
+					activate_law = law_type:law_commercialized_agriculture
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_total_separation
+						}
+					}
+					activate_law = law_type:law_total_separation
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_mass_conscription
+						}
+					}
+					activate_law = law_type:law_mass_conscription
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_compulsory_primary_school
+						}
+					}
+					activate_law = law_type:law_compulsory_primary_school
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_public_schools
+						}
+					}
+					activate_law = law_type:law_public_schools
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_interventionism
+						}
+					}
+					activate_law = law_type:law_interventionism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_regulatory_bodies
+						}
+					}
+					activate_law = law_type:law_regulatory_bodies
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_national_guard
+						}
+					}
+					activate_law = law_type:law_national_guard
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_right_of_assembly
+						}
+					}
+					activate_law = law_type:law_right_of_assembly
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_law = law_type:law_closed_borders
+						}
+					}
+					activate_law = law_type:law_closed_borders
+				}
+				add_modifier = {
+					name = 1848_revolution
+					months = 12
+					is_decaying = yes
+				}
+				call_election = {
+					months = 1
+				}
+				create_diplomatic_play = {
+					name = 1848_revolution_name
+					target_country = c:WAL
+					type = dp_revolution
+					escalation = 80
+				}
+			}
+		}
+		c:RUS = {
+			trigger_event = {
+				id = tgg_russia.214
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = tgg_russia.213.a
+		default_option = yes
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+}
+
+tgg_russia.214 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.214.t
+	desc = tgg_russia.214.d
+	flavor = tgg_russia.214.f
+	
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		set_global_variable = 1848_romania_start
+		c:MOL = {
+			save_scope_as = mol_scope
+		}
+		c:WAL = {
+			save_scope_as = wal_scope
+		}
+		c:TUR = {
+			save_scope_as = tur_scope
+		}
+		c:RUS = {
+			save_scope_as = rus_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.214.a
+		default_option = yes
+
+	}
+}
+
+tgg_russia.215 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.215.t
+	desc = tgg_russia.215.d
+	flavor = tgg_russia.215.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:POL = {
+			save_scope_as = pol_scope
+		}
+	}
+
+	option = {
+		name = tgg_russia.215.a
+		default_option = yes
+		remove_global_variable = 1848_poland_start
+		change_variable = {
+			name = gendarme_of_europe_var
+			add = 1
+		}
+		c:POL = {
+			remove_modifier = 1848_revolution
+		}
+		every_diplomatic_play = {
+			limit = { is_war = yes initiator_is = scope:pol_scope }
+			add_target_backers = { c:RUS }
+		}
+		add_radicals = {
+			value = very_large_radicals
+			culture = cu:polish
+		}
+		change_relations = {
+				country = c:PRU
+				value = 30
+		}
+	}
+	option = {
+		name = tgg_russia.215.b
+	}
+}
+
+tgg_russia.216 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.216.t
+	desc = tgg_russia.216.d
+	flavor = tgg_russia.216.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.216.a
+		default_option = yes
+		remove_global_variable = 1848_hungary_start
+		change_variable = {
+			name = gendarme_of_europe_var
+			add = 1
+		}
+		c:HUN = {
+			remove_modifier = 1848_revolution
+		}
+		every_diplomatic_play = {
+			limit = { 
+				is_war = yes
+				initiator_is = c:HUN
+			}
+			add_target_backers = { c:RUS }
+		}
+		add_radicals = {
+			value = very_large_radicals
+			interest_group = ig:ig_intelligentsia
+		}
+		add_radicals = {
+			value = very_large_radicals
+			culture = cu:hungarian
+		}
+		change_relations = {
+				country = c:AUS
+				value = 30
+		}
+	}
+	option = {
+		name = tgg_russia.216.b
+	}
+}
+
+tgg_russia.217 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.217.t
+	desc = tgg_russia.217.d
+	flavor = tgg_russia.217.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.217.a
+		default_option = yes
+		remove_global_variable = 1848_romania_start
+		change_variable = {
+			name = gendarme_of_europe_var
+			add = 1
+		}
+		every_diplomatic_play = {
+			limit = { 
+				is_war = yes
+				initiator_is = c:1848MOL
+			}
+			add_target_backers = { c:RUS }
+		}
+		c:1848MOL = {
+			remove_modifier = 1848_revolution
+		}
+		every_diplomatic_play = {
+			limit = { 
+				is_war = yes
+				initiator_is = c:1848WAL
+			}
+			add_target_backers = { c:RUS }
+		}
+		c:1848WAL = {
+			remove_modifier = 1848_revolution
+		}
+		add_radicals = {
+			value = very_large_radicals
+			culture = cu:romanian
+		}
+		add_radicals = {
+			value = very_large_radicals
+			interest_group = ig:ig_intelligentsia
+		}
+		change_relations = {
+				country = c:TUR
+				value = 10
+		}
+	}
+	option = {
+		name = tgg_russia.217.b
+	}
+}
+
+tgg_russia.218 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.218.t
+	desc = tgg_russia.218.d
+	flavor = tgg_russia.218.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.218.a
+		default_option = yes
+		add_modifier = {
+			name = gendarme_of_europe
+			months = 120
+		}
+	}
+}
+
+tgg_russia.219 = {
+	type = country_event
+	placement = root
+	
+	title = tgg_russia.219.t
+	desc = tgg_russia.219.d
+	flavor = tgg_russia.219.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = tgg_russia.219.a
+		default_option = yes
+		add_modifier = {
+			name = sick_gendarme_of_europe
+			months = 120
+		}
+	}
+}

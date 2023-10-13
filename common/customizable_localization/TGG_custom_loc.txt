@@ -41,3 +41,140 @@ je_great_game_reason_loc = {
 		localization_key = great_game_crisis_reason
 	}
 }
+
+
+crimean_war_custom_loc = {
+	type = country
+	text = { 
+		trigger = {
+			NOT = { has_variable = ruin_unkiar_skelessi_treaty }
+		}
+		localization_key = crimean_war_treatment_to_ottoman
+	}
+	text = { 
+		trigger = {
+			has_variable = ruin_unkiar_skelessi_treaty
+		}
+		localization_key = crimean_war_looming_war
+	}
+	text = {
+		trigger = {
+            has_global_variable = crimean_war_start_var
+		}
+		localization_key = crimean_war
+	}
+}
+
+crimean_war_reason_custom_loc = {
+	type = country
+	text = { 
+		trigger = {
+			NOT = { has_variable = ruin_unkiar_skelessi_treaty }
+		}
+		localization_key = crimean_war_treatment_to_ottoman_reason
+	}
+	text = { 
+		trigger = {
+			has_variable = ruin_unkiar_skelessi_treaty
+		}
+		localization_key = crimean_war_looming_war_reason
+	}
+	text = {
+		trigger = {
+            has_global_variable = crimean_war_start_var
+		}
+		localization_key = crimean_war_reason
+	}
+}
+
+tgg_central_asia_region = {
+	type = country
+	text = { 
+		trigger = {
+			has_global_variable = tgg_persia_title
+		}
+		localization_key = persia_region
+	}
+	text = { 
+		trigger = {
+			has_global_variable = tgg_afghanistan_title
+		}
+		localization_key = afghanistan_region
+	}
+	text = {
+		trigger = {
+            has_global_variable = tgg_uzbek_title
+		}
+		localization_key = uzbek_region
+	}
+	text = {
+		trigger = {
+            has_global_variable = tgg_kyrgyz_title
+		}
+		localization_key = kyrgyz_region
+	}
+	text = {
+		trigger = {
+           NOT = { has_global_variable = tgg_operation_gbr } 
+		}
+		localization_key = no_region
+	}
+}
+
+tgg_central_asia_operation_loc = {
+	type = country
+	text = { 
+		trigger = {
+			has_global_variable = tgg_central_asia_coup
+		}
+		localization_key = tgg_central_asia_coup_loc
+	}
+	text = { 
+		trigger = {
+			has_global_variable = tgg_central_asia_operation
+		}
+		localization_key = tgg_central_asia_operation_loc
+	}
+	text = {
+		trigger = {
+            has_global_variable = tgg_central_asia_assassination_prorus
+		}
+		localization_key = tgg_central_asia_assassination_prorus_loc
+	}
+	text = {
+		trigger = {
+            has_global_variable = tgg_central_asia_assassination_antigbr
+		}
+		localization_key = tgg_central_asia_assassination_antigbr_loc
+	}
+	text = { 
+		trigger = {
+			has_global_variable = tgg_central_asia_disseisin
+		}
+		localization_key = tgg_central_asia_disseisin_loc
+	}
+	text = { 
+		trigger = {
+			has_global_variable = tgg_central_asia_staff
+		}
+		localization_key = tgg_central_asia_staff_loc
+	}
+	text = {
+		trigger = {
+            has_global_variable = tgg_central_asia_support
+		}
+		localization_key = tgg_central_asia_support_loc
+	}
+	text = {
+		trigger = {
+            has_global_variable = tgg_central_asia_agreement
+		}
+		localization_key = tgg_central_asia_agreement_loc
+	}
+	text = {
+		trigger = {
+           NOT = { has_global_variable = tgg_operation_gbr } 
+		}
+		localization_key = tgg_central_asia_no_event
+	}
+}

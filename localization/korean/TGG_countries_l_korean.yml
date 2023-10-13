@@ -1,3 +1,11 @@
 ﻿l_korean:
  POS:0 "포젠"
+ POS_ADJ:0 "포젠"
  CPL:0 "폴란드 입헌왕국"
+ CPL_ADJ:0 "폴란드"
+ LIV:0 "리보니아"
+ LIV_ADJ:0 "리보니아"
+ COU:0 "쿠를란트"
+ COU_ADJ:0 "쿠를란트"
+ CAV:0 "코카서스 부왕령"
+ CAV_ADJ:0 "코카서스"

@@ -1,0 +1,96 @@
+﻿je_gendarme_of_europe = {
+	icon = "gfx/interface/icons/ig_icons/armed_forces.dds"
+
+	scripted_button = 1848_hungary
+	scripted_button = 1848_romania
+	scripted_button = 1848_poland
+
+	immediate = {
+		set_variable = {
+			name = gendarme_of_europe_var
+			value = 0
+		}
+	}
+
+	is_shown_when_inactive = {
+		c:RUS = root
+	}
+
+	possible = {
+		c:RUS = root
+		game_date > 1836.1.8
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = gendarme_of_europe_tt
+			var:gendarme_of_europe_var >= 3
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = tgg_russia.218
+		}
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = gendarme_of_europe_no_intervention_tt
+			game_date >= 1851.07.31
+			var:gendarme_of_europe_var < 2
+		}
+	}
+	
+	on_fail = {
+		trigger_event = {
+			id = tgg_russia.219
+		}
+	}
+
+	current_value = {
+		value = var:gendarme_of_europe_var
+	}
+
+	goal_add_value = {
+		add = 3
+	}
+	
+	progressbar = yes
+
+	timeout = 7300
+
+	on_timeout = {
+		trigger_event = {
+			id = tgg_russia.219
+		}
+	}
+
+	weight = 10000
+	should_be_pinned_by_default = yes
+}
+
+je_crimean_war = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	is_shown_when_inactive = {
+		c:RUS = root
+	}
+
+	immediate = {
+	}
+
+	possible = {
+		c:RUS = root
+		game_date > 1836.1.8
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = wip
+			has_global_variable = never_complete
+		}
+	}
+
+	weight = 8000
+	should_be_pinned_by_default = yes
+}

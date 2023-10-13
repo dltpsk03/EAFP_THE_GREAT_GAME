@@ -1,0 +1,1250 @@
+﻿types tgg_panel_types
+{
+	type tgg_panel = tgg_panel_fullscreen_block_window {
+		visible = "[GetVariableSystem.Exists('tgg_open')]"
+		state = {
+			name = 1
+			trigger_on_create = yes
+			on_start = "[GetVariableSystem.Set('tgg_last_tab', 'overview_tgg')]"
+		}
+		name = "tgg_panel"
+
+
+		blockoverride
+		"animation_state_block"
+		{
+			state = {
+				name = _show
+				start_sound = {
+					soundeffect = "snapshot:/Dynamic/mute_world_80"
+				}
+				start_sound = {
+					soundeffect = "snapshot:/Dynamic/mute_vfx_war_100"
+				}
+			}
+		}
+
+		blockoverride "window_header_name" {
+			text = "concept_tgg_panel"
+		}
+
+		blockoverride "fixed_top" {
+			tab_buttons = {
+				blockoverride "first_button" {
+					text = "OVERVIEW"
+				}
+				blockoverride "first_button_tooltip" {
+					tooltip = "OVERVIEW"
+				}
+				blockoverride "first_button_click" {
+					onclick = "[GetVariableSystem.Set('tgg_last_tab', 'overview_tgg')]"
+					onclick = "[GetVariableSystem.Set('tgg_open', 'overview_tgg')]"
+				}
+				blockoverride "first_button_visibility" {
+					visible = "[GetVariableSystem.HasValue('tgg_open', 'overview_tgg')]"
+				}
+				blockoverride "first_button_visibility_checked" {
+					visible = "[Not(GetVariableSystem.HasValue('tgg_open', 'overview_tgg'))]"
+				}
+				blockoverride "first_button_selected" {
+					text = "OVERVIEW"
+				}
+				blockoverride "second_button" {
+					text = "CENTRAL_ASIA"
+				}
+				blockoverride "second_button_tooltip" {
+					tooltip = "CENTRAL_ASIA"
+				}
+				blockoverride "second_button_click" {
+					onclick = "[GetVariableSystem.Set('tgg_open', 'central_asia')]"
+					onclick = "[GetVariableSystem.Set('tgg_last_tab', 'central_asia')]"
+				}
+				blockoverride "second_button_visibility" {
+					visible = "[GetVariableSystem.HasValue('tgg_open', 'central_asia')]"
+				}
+				blockoverride "second_button_visibility_checked" {
+					visible = "[Not(GetVariableSystem.HasValue('tgg_open', 'central_asia'))]"
+				}
+				blockoverride "second_button_selected" {
+					text = "CENTRAL_ASIA"
+				}
+
+				blockoverride "third_button" {
+					text = "BALKANS"
+				}
+				blockoverride "third_button_tooltip" {
+					tooltip = "BALKANS"
+				}
+				blockoverride "third_button_click" {
+					onclick = "[GetVariableSystem.Set('tgg_open', 'balkans')]"
+					onclick = "[GetVariableSystem.Set('tgg_last_tab', 'balkans')]"
+				}
+				blockoverride "third_button_visibility" {
+					visible = "[And(GetGlobalVariable('crimean_war_end_var').IsSet, GetVariableSystem.HasValue('tgg_open', 'balkans'))]"
+				}
+				blockoverride "third_button_visibility_checked" {
+					visible = "[And(GetGlobalVariable('crimean_war_end_var').IsSet, Not(GetVariableSystem.HasValue('tgg_open', 'balkans')))]"
+				}
+				blockoverride "third_button_selected" {
+					text = "BALKANS"
+				}
+				blockoverride "fourth_button" {
+					text = "NORTH_AFRICA"
+				}
+				blockoverride "fourth_button_tooltip" {
+					tooltip = "NORTH_AFRICA"
+				}
+				blockoverride "fourth_button_click" {
+					onclick = "[GetVariableSystem.Set('tgg_open', 'north_africa')]"
+					onclick = "[GetVariableSystem.Set('tgg_last_tab', 'north_africa')]"
+				}
+				blockoverride "fourth_button_visibility" {
+					visible = "[And(GetGlobalVariable('russo_turkish_war_end_var').IsSet, GetVariableSystem.HasValue('tgg_open', 'north_africa'))]"
+				}
+				blockoverride "fourth_button_visibility_checked" {
+					visible = "[And(GetGlobalVariable('russo_turkish_war_end_var').IsSet,Not(GetVariableSystem.HasValue('tgg_open', 'north_africa')))]"
+				}
+				blockoverride "fourth_button_selected" {
+					text = "NORTH_AFRICA"
+				}
+				blockoverride "fifth_button" {
+					text = "FAREAST"
+				}
+				blockoverride "fifth_button_tooltip" {
+					tooltip = "FAREAST"
+				}
+				blockoverride "fifth_button_click" {
+					onclick = "[GetVariableSystem.Set('tgg_open', 'fareast')]"
+					onclick = "[GetVariableSystem.Set('tgg_last_tab', 'fareast')]"
+				}
+				blockoverride "fifth_button_visibility" {
+					visible = "[And(GetGlobalVariable('win_balkan_var').IsSet, GetVariableSystem.HasValue('tgg_open', 'fareast'))]"
+				}
+				blockoverride "fifth_button_visibility_checked" {
+					visible = "[And(GetGlobalVariable('win_balkan_var').IsSet, Not(GetVariableSystem.HasValue('tgg_open', 'fareast')))]"
+				}
+				blockoverride "fifth_button_selected" {
+					text = "FAREAST"
+				}
+			}
+		}
+		blockoverride "entire_content_area" {
+			tgg_panel_overview_content = {
+				visible = "[GetVariableSystem.HasValue('tgg_open', 'overview_tgg')]"
+				using = default_fade_in_out
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+			}
+			tgg_panel_central_asia = {
+				visible = "[GetVariableSystem.HasValue('tgg_open', 'central_asia')]"
+				using = default_fade_in_out
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+			}
+			tgg_panel_balkans = {
+				visible = "[GetVariableSystem.HasValue('tgg_open', 'balkans')]"
+				using = default_fade_in_out
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+			}
+			tgg_panel_north_africa = {
+				visible = "[GetVariableSystem.HasValue('tgg_open', 'north_africa')]"
+				using = default_fade_in_out
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+			}
+			tgg_panel_fareast = {
+				visible = "[GetVariableSystem.HasValue('tgg_open', 'fareast')]"
+				using = default_fade_in_out
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+			}
+		}
+	}
+
+
+
+
+	type tgg_panel_overview_content = vbox {
+		name = "tgg_panel_overview_content"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding	
+			
+		hbox = {
+			flowcontainer = {
+				layoutpolicy_horizontal = preferred
+				layoutpolicy_vertical = preferred
+				background = {
+					visible = "[NOT(GetGlobalVariable('crimean_war_end_var').IsSet)]"
+					texture = "gfx\interface\icons\tgg_icon\phase1.png"
+					alpha = 0.7
+				}
+				background = {
+					visible = "[GetGlobalVariable('crimean_war_end_var').IsSet]"
+					texture = "gfx\interface\icons\tgg_icon\phase1.png"
+					alpha = 0.1
+				}
+				widget = {
+					size = { 200 100 }
+					textbox = {
+						visible = "[Not(GetGlobalVariable('crimean_war_end_var').IsSet)]"
+						size = { 200 100 }
+						text = "tgg_phase_1"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[GetGlobalVariable('crimean_war_end_var').IsSet]"
+						size = { 200 100 }
+						text = "tgg_phase_1_notset"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+			flowcontainer = {
+				layoutpolicy_horizontal = preferred
+				layoutpolicy_vertical = preferred
+				background = {
+					visible = "[Not(GetGlobalVariable('crimean_war_end_var').IsSet)]"
+					texture = "gfx\interface\icons\tgg_icon\phase2.png"
+					alpha = 0.1
+				}
+				background = {
+					visible = "[GetGlobalVariable('crimean_war_end_var').IsSet]"
+					texture = "gfx\interface\icons\tgg_icon\phase2.png"
+					alpha = 0.7
+				}
+				widget = {
+					size = { 200 100}
+					textbox = {
+						visible = "[GetGlobalVariable('crimean_war_end_var').IsSet]"
+						size = { 200 100 }
+						text = "tgg_phase_2"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('crimean_war_end_var').IsSet)]"
+						size = { 200 100 }
+						text = "tgg_phase_2_notset"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+			flowcontainer = {
+				layoutpolicy_horizontal = preferred
+				layoutpolicy_vertical = preferred
+				background = {
+					visible = "[Not(GetGlobalVariable('win_balkan_var').IsSet)]"
+					texture = "gfx\interface\icons\tgg_icon\phase3.png"
+					alpha = 0.1
+				}
+				background = {
+					visible = "[GetGlobalVariable('win_balkan_var').IsSet]"
+					texture = "gfx\interface\icons\tgg_icon\phase3.png"
+					alpha = 0.7
+				}
+				widget = {
+					size = { 200 100}
+					textbox = {
+						visible = "[GetGlobalVariable('win_balkan_var').IsSet]"
+						size = { 200 100 }
+						text = "tgg_phase_3"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('win_balkan_var').IsSet)]"
+						size = { 200 100 }
+						text = "tgg_phase_3_notset"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+			flowcontainer = {
+				layoutpolicy_horizontal = preferred
+				layoutpolicy_vertical = preferred
+				background = {
+					visible = "[Not(GetGlobalVariable('russo_turkish_war_end_var').IsSet)]"
+					texture = "gfx\interface\icons\tgg_icon\phase4.png"
+					alpha = 0.1
+				}
+				background = {
+					visible = "[GetGlobalVariable('russo_turkish_war_end_var').IsSet]"
+					texture = "gfx\interface\icons\tgg_icon\phase4.png"
+					alpha = 0.7
+				}
+				widget = {
+					size = { 200 100}
+					textbox = {
+						visible = "[GetGlobalVariable('russo_turkish_war_end_var').IsSet]"
+						size = { 200 100 }
+						text = "tgg_phase_4"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('russo_turkish_war_end_var').IsSet)]"
+						size = { 200 100 }
+						text = "tgg_phase_4_notset"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+		}
+		hbox = {
+			
+			container = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				widget = {
+					size = { 500 100}
+				}
+			}
+
+		}
+		hbox = {
+			
+			container = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 300 200}
+					textbox = {
+						size = { 300 50 }
+						text = "event_central_asia"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('tgg_operation_gbr').IsSet)]"
+						margin_top = 50
+						size = { 300 150 }
+						text = "tgg_central_asia_no_event"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Or(GreaterThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)19'), GetGlobalVariable('intelligence_success').IsSet)]"
+						margin_top = 50
+						size = { 300 150 }
+						text = "event_central_asia_desc"
+						fontsize = 15
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[And(LessThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)19'), GetGlobalVariable('intelligence_fail').IsSet)]"
+						margin_top = 50
+						size = { 300 150 }
+						text = "unknown_operation"
+						fontsize = 15
+						align = center
+						elide = center
+					}
+				}
+			}
+			container = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					
+					size = { 300 200}
+					textbox = {
+						visible = "[GetGlobalVariable('crimean_war_end_var').IsSet]"
+						size = { 300 50 }
+						text = "event_balkan"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[GetGlobalVariable('crimean_war_end_var').IsSet]"
+						margin_top = 50
+						size = { 300 150 }
+						text = "event_balkan_desc"
+						fontsize = 12
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('crimean_war_end_var').IsSet)]"
+						size = { 300 200 }
+						text = "event_not_open"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+			container = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 300 200}
+					textbox = {
+						visible = "[GetGlobalVariable('win_balkan_var').IsSet]"
+						size = { 300 50 }
+						text = "event_north_africa"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[GetGlobalVariable('win_balkan_var').IsSet]"
+						margin_top = 50
+						size = { 300 150 }
+						text = "event_north_africa_desc"
+						fontsize = 12
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('win_balkan_var').IsSet)]"
+						size = { 300 200 }
+						text = "event_not_open"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+			container = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 300 200}
+					textbox = {
+						visible = "[GetGlobalVariable('russo_turkish_war_end_var').IsSet]"
+						size = { 300 50 }
+						text = "event_fareast"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[GetGlobalVariable('russo_turkish_war_end_var').IsSet]"
+						margin_top = 50
+						size = { 300 150 }
+						text = "event_fareast_desc"
+						fontsize = 12
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('russo_turkish_war_end_var').IsSet)]"
+						size = { 300 200 }
+						text = "event_not_open"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+				}
+			}
+		}
+		hbox = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = preferred
+			container = {
+				ignoreinvisible = yes
+				allow_outside = yes
+				widget = {
+					ignoreinvisible = yes
+					allow_outside = yes
+					size = { 300 300 }
+					icon = {
+							texture = "gfx\interface\flags\gbr_flag.png"
+							alpha = 0.7
+							size = { 80% 90% }
+					}
+					
+				}
+			}
+			container = {
+				ignoreinvisible = yes
+				allow_outside = yes
+				widget = {
+					ignoreinvisible = yes
+					allow_outside = yes
+					position = { -100 -25 }
+					size = { 300 280 }
+					using = entry_bg_fancy
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 300 40 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+									size = { 300 40 }
+									text = "gbr_sphere"
+									default_format = "#title"
+									fontsize = 20
+									margin_bottom = 5
+									align = center
+									elide = center
+							}
+						}
+					}
+					flowcontainer = {
+						margin_top = 40
+						parentanchor = hcenter
+						scrollbox = {
+							minimumsize = { 300 240 }
+							blockoverride "scrollbox_content" {
+								vbox = {
+									datamodel_wrap = 1
+									datamodel = "[GetGlobalList('gbr_influence_list')]"
+									item = {
+										flowcontainer = {
+											direction = vertical
+											datacontext = "[Scope.AccessCountry]"
+											textbox = {
+												multiline = yes
+												size = { 300 25 }
+												align = left
+												fontsize = 16
+												text = "[Country.GetName]"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			container = {
+				widget = {
+					size = { 300 280 }
+				}
+			}
+			container = {
+				ignoreinvisible = yes
+				allow_outside = yes
+				widget = {
+					ignoreinvisible = yes
+					allow_outside = yes
+					parentanchor = right
+					size = { 300 280 }
+					position = { 35 -25 }
+					using = entry_bg_fancy
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 300 40 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+									size = { 300 40 }
+									text = "russia_sphere"
+									default_format = "#title"
+									fontsize = 20
+									margin_bottom = 5
+									align = center
+									elide = center
+							}
+						}
+					}
+					flowcontainer = {
+						margin_top = 40
+						parentanchor = hcenter
+						scrollbox = {
+							minimumsize = { 300 240 }
+							blockoverride "scrollbox_content" {
+								vbox = {
+									datamodel_wrap = 1
+									datamodel = "[GetGlobalList('rus_influence_list')]"
+									item = {
+										flowcontainer = {
+											direction = vertical
+											datacontext = "[Scope.AccessCountry]"
+											textbox = {
+												multiline = yes
+												size = { 300 25 }
+												align = left
+												fontsize = 16
+												text = "[Country.GetName]"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			container = {
+				ignoreinvisible = yes
+				allow_outside = yes
+				widget = {
+					ignoreinvisible = yes
+					allow_outside = yes
+					size = { 300 300 }
+					parentanchor = right
+					icon = {
+							texture = "gfx\interface\flags\russia_flag.png"
+							alpha = 0.7
+							size = { 80% 90% }
+					}
+					
+				}
+				
+			}
+		}
+	}
+
+	type tgg_panel_central_asia = hbox {
+		name = "tgg_panel_central_asia"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding	
+		
+		flowcontainer = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = preferred
+			direction = vertical
+
+			flowcontainer = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+
+				widget = {
+					size = { 400 420 }
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 400 60 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+								margin_top = 5
+								size = { 400 50 }
+								text = "persia_region"
+								fontsize = 20
+								align = center
+								elide = center
+							}
+						}
+					}
+					textbox = {
+						margin_top = 200
+						size = { 400 50 }
+						text = "persia_control"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 180 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}		
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('persia_control_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('persia_control_rus_value')]"
+						}
+					}	
+
+					textbox = {
+						margin_top = 500
+						size = { 400 50 }
+						text = "persia_trust"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 330 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}			
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('persia_trust_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('persia_trust_rus_value')]"
+						}
+					}	
+				}
+			}
+			flowcontainer = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 400 420 }
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 400 60 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+								margin_top = 5
+								size = { 400 50 }
+								text = "afghanistan_region"
+								fontsize = 20
+								align = center
+								elide = center
+							}
+						}
+					}
+					textbox = {
+						margin_top = 200
+						size = { 400 50 }
+						text = "afghanistan_control"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 180 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}		
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('afghanistan_control_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('afghanistan_control_rus_value')]"
+						}
+					}	
+
+					textbox = {
+						margin_top = 500
+						size = { 400 50 }
+						text = "afghanistan_trust"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 330 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}			
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('afghanistan_trust_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('afghanistan_trust_rus_value')]"
+						}
+					}	
+				}
+			}
+		}
+		flowcontainer = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = preferred
+			direction = vertical
+			flowcontainer = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				
+
+				widget = {
+					size = { 1000 550 }
+					icon = {
+						texture = "gfx\interface\icons\tgg_icon\background2.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.9
+					}
+					icon = {
+						visible = "[Or(Not(GetGlobalVariable('persia_win_rus').IsSet), Not(GetGlobalVariable('persia_win_gbr').IsSet))]"
+						texture = "gfx\interface\icons\tgg_icon\persia_normal.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('persia_win_rus').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\persia_rus.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('persia_win_gbr').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\persia_gbr.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[Or(Not(GetGlobalVariable('afghanistan_win_rus').IsSet), Not(GetGlobalVariable('afghanistan_win_gbr').IsSet))]"
+						texture = "gfx\interface\icons\tgg_icon\afghanistan_normal.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('afghanistan_win_rus').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\afghanistan_rus.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('afghanistan_win_gbr').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\afghanistan_gbr.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[Or(Not(GetGlobalVariable('uzbek_win_rus').IsSet), Not(GetGlobalVariable('uzbek_win_gbr').IsSet))]"
+						texture = "gfx\interface\icons\tgg_icon\uzbek_normal.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('uzbek_win_rus').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\uzbek_rus.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('uzbek_win_gbr').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\uzbek_gbr.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[Or(Not(GetGlobalVariable('kyrgyz_win_rus').IsSet), Not(GetGlobalVariable('kyrgyz_win_gbr').IsSet))]"
+						texture = "gfx\interface\icons\tgg_icon\kyrgyz_normal.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('kyrgyz_win_rus').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\kyrgyz_rus.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+					icon = {
+						visible = "[GetGlobalVariable('kyrgyz_win_gbr').IsSet]"
+						texture = "gfx\interface\icons\tgg_icon\kyrgyz_gbr.png"
+						size = { 93.25% 96% }
+						position = { 50 10 }
+						alpha = 0.7
+					}
+				}
+			}
+			flowcontainer = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				
+
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 1000 290 }
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 1000 60 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+								margin_top = 5
+								size = { 1000 50 }
+								text = "tgg_central_asia_events"
+								fontsize = 20
+								align = center
+								elide = center
+							}
+						}
+					}
+					textbox = {
+						visible = "[Not(GetGlobalVariable('tgg_operation_gbr').IsSet)]"
+						margin_top = 50
+						size = { 500 150 }
+						text = "tgg_central_asia_no_event"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[Or(GreaterThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)19'), GetGlobalVariable('intelligence_success').IsSet)]"
+						margin_top = 50
+						size = { 500 270 }
+						text = "event_central_asia_desc"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					textbox = {
+						visible = "[And(LessThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)19'), GetGlobalVariable('intelligence_fail').IsSet)]"
+						margin_top = 50
+						size = { 500 270 }
+						text = "unknown_operation"
+						fontsize = 20
+						align = center
+						elide = center
+					}
+					container = {
+						button = {
+							block "side_visible_property" {
+								visible = "[And(Not(GetGlobalVariable('tgg_temp1').IsSet), GreaterThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)0'))]"
+							}
+							using = default_button_primary
+							size = { 200 50 }
+							position = { 600 150 }
+							onclick = "[GetScriptedGui('tgg_exposition_button').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							textbox = {
+								text = "intelligence_start"
+								size = { 100% 30 }
+								position = { 0 10 }
+								margin = { 10 0 }
+								elide = right
+								align = center|nobaseline
+							}
+						}
+						button = {
+							block "side_visible_property" {
+								visible = "[And(GetGlobalVariable('intelligence_success').IsSet, And(Not(GetGlobalVariable('tgg_temp2').IsSet), GreaterThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)9')))]"
+							}
+							using = default_button_primary
+							size = { 200 50 }
+							position = { 600 150 }
+							onclick = "[GetScriptedGui('tgg_complication_button').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							textbox = {
+								text = "complication_start"
+								size = { 100% 30 }
+								position = { 0 10 }
+								margin = { 10 0 }
+								elide = right
+								align = center|nobaseline
+							}
+						}
+						button = {
+							block "side_visible_property" {
+								visible = "[And(Not(GetGlobalVariable('tgg_temp3').IsSet), GreaterThan_CFixedPoint(GetGlobalVariable('tgg_operation_gbr').GetValue, '(CFixedPoint)19'))]"
+							}
+							using = default_button_primary
+							size = { 200 50 }
+							position = { 600 150 }
+							onclick = "[GetScriptedGui('tgg_operation_button').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							textbox = {
+								text = "operation_start"
+								size = { 100% 30 }
+								position = { 0 10 }
+								margin = { 10 0 }
+								elide = right
+								align = center|nobaseline
+							}
+						}
+					}
+				}
+			}
+		}
+		flowcontainer = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = preferred
+			direction = vertical
+
+			flowcontainer = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				
+
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 400 420 }
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 400 60 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+								margin_top = 5
+								size = { 400 50 }
+								text = "uzbek_region"
+								fontsize = 20
+								align = center
+								elide = center
+							}
+						}
+					}
+					textbox = {
+						margin_top = 200
+						size = { 400 50 }
+						text = "uzbek_control"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 180 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}		
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('uzbek_control_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('uzbek_control_rus_value')]"
+						}
+					}	
+
+					textbox = {
+						margin_top = 500
+						size = { 400 50 }
+						text = "uzbek_trust"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 330 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}			
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('uzbek_trust_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('uzbek_trust_rus_value')]"
+						}
+					}	
+				}
+			}
+			flowcontainer = {
+				layoutpolicy_horizontal = fixed
+				layoutpolicy_vertical = fixed
+				
+
+				background = {
+					using = light_bg
+					alpha = 0.8
+					using = frame_small_mask
+				}
+				widget = {
+					size = { 400 420 }
+					default_header_clean = {
+						blockoverride "header_mask" {
+							using = frame_small_mask_top
+						}
+						blockoverride "size" {
+							size = { 400 60 }
+						}
+						blockoverride "textbox" {
+							textbox = {
+								margin_top = 5
+								size = { 400 50 }
+								text = "kyrgyz_region"
+								fontsize = 20
+								align = center
+								elide = center
+							}
+						}
+					}
+					textbox = {
+						margin_top = 200
+						size = { 400 50 }
+						text = "kyrgyz_control"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 180 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}		
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('kyrgyz_control_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('kyrgyz_control_rus_value')]"
+						}
+					}	
+
+					textbox = {
+						margin_top = 500
+						size = { 400 50 }
+						text = "kyrgyz_trust"
+						fontsize = 18
+						align = center
+						elide = center
+					}
+					
+					double_direction_progressbar = {
+						size = { 300 20 }
+						position = { 50 330 }
+						blockoverride "positive_min_max_values" {
+							min = 0
+							max = 100
+						}
+						blockoverride "negative_min_max_values" {
+							min = -100
+							max = 0
+						}			
+						blockoverride "value_left" {
+							value = "[GetPlayer.MakeScope.ScriptValue('kyrgyz_trust_gbr_value')]"
+						}
+						blockoverride "value_right" {
+							value = "[GetPlayer.MakeScope.ScriptValue('kyrgyz_trust_rus_value')]"
+						}
+					}	
+				}
+			}
+		}
+	}
+
+	type tgg_panel_balkans = vbox {
+		name = "tgg_panel_balkans"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding	
+	}
+
+	type tgg_panel_north_africa = vbox {
+		name = "tgg_panel_north_africa"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding	
+	}
+	
+	type tgg_panel_fareast = vbox {
+		name = "tgg_panel_fareast"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding	
+	}
+	type tgg_panel_fullscreen_block_window = fullscreen_block_window {
+		blockoverride "back_button_fullscreen" {
+			back_button_large = {
+				position = { 11 15 }
+				parentanchor = top|left
+				onclick = "[GetVariableSystem.Clear('tgg_open')]"
+				input_action = "back"
+			}
+		}
+	}
+}
+
+	

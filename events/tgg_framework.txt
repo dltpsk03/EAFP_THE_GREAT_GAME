@@ -1,0 +1,1502 @@
+﻿namespace = tgg_framework
+
+
+
+tgg_framework.1 = { #trigger of 1836's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.2
+            years = 1
+        }
+    }
+}
+
+tgg_framework.2 = { #trigger of 1837's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.3
+            years = 1
+        }
+    }
+}
+
+tgg_framework.3 = { #trigger of 1838's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.4
+            years = 1
+        }
+        trigger_event = {
+            id = tgg_russia.100
+            days = 35
+        }
+    }
+}
+
+tgg_framework.4 = { #trigger of 1839's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.5
+            years = 1
+        }
+        trigger_event = {
+            id = tgg_russia.101
+            months = 6
+        }
+    }
+}
+
+tgg_framework.5 = { #trigger of 1840's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.6
+            years = 1
+        }
+    }
+}
+
+tgg_framework.6 = { #trigger of 1841's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.7
+            years = 1
+        }
+         trigger_event = {
+            id = tgg_russia.108
+        }
+    }
+}
+
+tgg_framework.7 = { #trigger of 1842's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.8
+            years = 1
+        }
+    }
+}
+
+tgg_framework.8 = { #trigger of 1843's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.9
+            years = 1
+        }
+    }
+}
+
+tgg_framework.9 = { #trigger of 1844's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.10
+            years = 1
+        }
+    }
+}
+
+tgg_framework.10 = { #trigger of 1845's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.11
+            years = 1
+        }
+    }
+}
+
+tgg_framework.11 = { #trigger of 1846's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.12
+            years = 1
+        }
+    }
+}
+
+tgg_framework.12 = { #trigger of 1847's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.13
+            years = 1
+        }
+    }
+}
+
+tgg_framework.13 = { #trigger of 1848's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.14
+            years = 1
+        }
+        c:SIC ={
+            trigger_event = {
+                id = tgg_russia.200
+            }
+        }
+        c:PRU = {
+            trigger_event = {
+                id = tgg_russia.202
+                months = 3
+            }
+        }
+        c:POS = {
+            trigger_event = {
+                id = tgg_russia.204
+                days = 109
+            }
+        }
+        c:AUS = {
+            trigger_event = {
+                id = tgg_russia.206
+                days = 103
+            }
+        }
+        trigger_event = {
+            id = tgg_russia.208
+            days = 190
+        }
+        c:AUS = {
+            trigger_event = {
+                id = tgg_russia.209
+                days = 210
+            }
+        }
+        c:MOL = {
+            trigger_event = {
+                id = tgg_russia.211
+                days = 120
+            }
+        }
+        c:WAL = {
+            trigger_event = {
+                id = tgg_russia.213
+                days = 170
+            }
+        }
+
+    }
+}
+
+tgg_framework.14 = { #trigger of 1849's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.15
+            years = 1
+        }
+    }
+}
+
+tgg_framework.15 = { #trigger of 1850's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.16
+            years = 1
+        }
+    }
+}
+
+tgg_framework.16 = { #trigger of 1851's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.17
+            years = 1
+        }
+    }
+}
+
+tgg_framework.17 = { #trigger of 1852's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.18
+            years = 1
+        }
+    }
+}
+
+tgg_framework.18 = { #trigger of 1853's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.19
+            years = 1
+        }
+    }
+}
+
+tgg_framework.19 = { #trigger of 1854's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.20
+            years = 1
+        }
+    }
+}
+
+tgg_framework.20 = { #trigger of 1855's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.21
+            years = 1
+        }
+    }
+}
+
+tgg_framework.21 = { #trigger of 1856's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.22
+            years = 1
+        }
+    }
+}
+
+tgg_framework.22 = { #trigger of 1857's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.23
+            years = 1
+        }
+    }
+}
+
+tgg_framework.23 = { #trigger of 1858's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.24
+            years = 1
+        }
+    }
+}
+
+tgg_framework.24 = { #trigger of 1859's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.25
+            years = 1
+        }
+    }
+}
+
+tgg_framework.25 = { #trigger of 1860's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.26
+            years = 1
+        }
+    }
+}
+
+tgg_framework.26 = { #trigger of 1861's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.27
+            years = 1
+        }
+    }
+}
+
+tgg_framework.27 = { #trigger of 1862's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.28
+            years = 1
+        }
+    }
+}
+
+tgg_framework.28 = { #trigger of 1863's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.29
+            years = 1
+        }
+    }
+}
+
+tgg_framework.29 = { #trigger of 1864's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.30
+            years = 1
+        }
+    }
+}
+
+tgg_framework.30 = { #trigger of 1865's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.31
+            years = 1
+        }
+    }
+}
+
+tgg_framework.31 = { #trigger of 1866's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.32
+            years = 1
+        }
+    }
+}
+
+tgg_framework.32 = { #trigger of 1867's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.33
+            years = 1
+        }
+    }
+}
+
+tgg_framework.33 = { #trigger of 1868's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.34
+            years = 1
+        }
+    }
+}
+
+tgg_framework.34 = { #trigger of 1869's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.35
+            years = 1
+        }
+    }
+}
+
+tgg_framework.35 = { #trigger of 1870's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.36
+            years = 1
+        }
+    }
+}
+
+tgg_framework.36 = { #trigger of 1871's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.37
+            years = 1
+        }
+    }
+}
+
+tgg_framework.37 = { #trigger of 1872's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.38
+            years = 1
+        }
+    }
+}
+
+tgg_framework.38 = { #trigger of 1873's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.39
+            years = 1
+        }
+    }
+}
+
+tgg_framework.39 = { #trigger of 1874's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.40
+            years = 1
+        }
+    }
+}
+
+tgg_framework.40 = { #trigger of 1875's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.41
+            years = 1
+        }
+    }
+}
+
+tgg_framework.41 = { #trigger of 1876's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.42
+            years = 1
+        }
+    }
+}
+
+tgg_framework.42 = { #trigger of 1877's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.43
+            years = 1
+        }
+    }
+}
+
+tgg_framework.43 = { #trigger of 1878's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.44
+            years = 1
+        }
+    }
+}
+
+tgg_framework.44 = { #trigger of 1879's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.45
+            years = 1
+        }
+    }
+}
+
+tgg_framework.45 = { #trigger of 1880's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.46
+            years = 1
+        }
+    }
+}
+
+tgg_framework.46 = { #trigger of 1881's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.47
+            years = 1
+        }
+    }
+}
+
+tgg_framework.47 = { #trigger of 1882's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.48
+            years = 1
+        }
+    }
+}
+
+tgg_framework.48 = { #trigger of 1883's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.49
+            years = 1
+        }
+    }
+}
+
+tgg_framework.49 = { #trigger of 1884's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.50
+            years = 1
+        }
+    }
+}
+
+tgg_framework.50 = { #trigger of 1885's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.51
+            years = 1
+        }
+    }
+}
+
+tgg_framework.51 = { #trigger of 1886's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.52
+            years = 1
+        }
+    }
+}
+
+tgg_framework.52 = { #trigger of 1887's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.53
+            years = 1
+        }
+    }
+}
+
+tgg_framework.53 = { #trigger of 1888's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.54
+            years = 1
+        }
+    }
+}
+
+tgg_framework.54 = { #trigger of 1889's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.55
+            years = 1
+        }
+    }
+}
+
+tgg_framework.55 = { #trigger of 1890's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.56
+            years = 1
+        }
+    }
+}
+
+tgg_framework.56 = { #trigger of 1891's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.57
+            years = 1
+        }
+    }
+}
+
+tgg_framework.57 = { #trigger of 1892's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.58
+            years = 1
+        }
+    }
+}
+
+tgg_framework.58 = { #trigger of 1893's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.59
+            years = 1
+        }
+    }
+}
+
+tgg_framework.59 = { #trigger of 1894's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.60
+            years = 1
+        }
+    }
+}
+
+tgg_framework.60 = { #trigger of 1895's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.61
+            years = 1
+        }
+    }
+}
+
+tgg_framework.61 = { #trigger of 1896's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.62
+            years = 1
+        }
+    }
+}
+
+tgg_framework.62 = { #trigger of 1897's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.63
+            years = 1
+        }
+    }
+}
+
+tgg_framework.63 = { #trigger of 1898's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.64
+            years = 1
+        }
+    }
+}
+
+tgg_framework.64 = { #trigger of 1899's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.65
+            years = 1
+        }
+    }
+}
+
+tgg_framework.65 = { #trigger of 1900's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.66
+            years = 1
+        }
+    }
+}
+
+tgg_framework.66 = { #trigger of 1901's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.67
+            years = 1
+        }
+    }
+}
+
+tgg_framework.67 = { #trigger of 1902's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.68
+            years = 1
+        }
+    }
+}
+
+tgg_framework.68 = { #trigger of 1903's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.69
+            years = 1
+        }
+    }
+}
+
+tgg_framework.69 = { #trigger of 1904's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.70
+            years = 1
+        }
+    }
+}
+
+tgg_framework.70 = { #trigger of 1905's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.71
+            years = 1
+        }
+    }
+}
+
+tgg_framework.71 = { #trigger of 1906's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.72
+            years = 1
+        }
+    }
+}
+
+tgg_framework.72 = { #trigger of 1907's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.73
+            years = 1
+        }
+    }
+}
+
+tgg_framework.73 = { #trigger of 1908's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.74
+            years = 1
+        }
+    }
+}
+
+tgg_framework.74 = { #trigger of 1909's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.75
+            years = 1
+        }
+    }
+}
+
+tgg_framework.75 = { #trigger of 1910's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.76
+            years = 1
+        }
+    }
+}
+
+tgg_framework.76 = { #trigger of 1911's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.77
+            years = 1
+        }
+    }
+}
+
+tgg_framework.77 = { #trigger of 1912's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.78
+            years = 1
+        }
+    }
+}
+
+tgg_framework.78 = { #trigger of 1913's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.79
+            years = 1
+        }
+    }
+}
+
+tgg_framework.79 = { #trigger of 1914's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.80
+            years = 1
+        }
+    }
+}
+
+tgg_framework.80 = { #trigger of 1915's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.81
+            years = 1
+        }
+    }
+}
+
+tgg_framework.81 = { #trigger of 1916's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.82
+            years = 1
+        }
+    }
+}
+
+tgg_framework.82 = { #trigger of 1917's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.83
+            years = 1
+        }
+    }
+}
+
+tgg_framework.83 = { #trigger of 1918's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.84
+            years = 1
+        }
+    }
+}
+
+tgg_framework.84 = { #trigger of 1919's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.85
+            years = 1
+        }
+    }
+}
+
+tgg_framework.85 = { #trigger of 1920's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.86
+            years = 1
+        }
+    }
+}
+
+tgg_framework.86 = { #trigger of 1921's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.87
+            years = 1
+        }
+    }
+}
+
+tgg_framework.87 = { #trigger of 1922's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.88
+            years = 1
+        }
+    }
+}
+
+tgg_framework.88 = { #trigger of 1923's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.89
+            years = 1
+        }
+    }
+}
+
+tgg_framework.89 = { #trigger of 1924's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.90
+            years = 1
+        }
+    }
+}
+
+tgg_framework.90 = { #trigger of 1925's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.91
+            years = 1
+        }
+    }
+}
+
+tgg_framework.91 = { #trigger of 1926's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.92
+            years = 1
+        }
+    }
+}
+
+tgg_framework.92 = { #trigger of 1927's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.93
+            years = 1
+        }
+    }
+}
+
+tgg_framework.93 = { #trigger of 1928's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.94
+            years = 1
+        }
+    }
+}
+
+tgg_framework.94 = { #trigger of 1929's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.95
+            years = 1
+        }
+    }
+}
+
+tgg_framework.95 = { #trigger of 1930's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.96
+            years = 1
+        }
+    }
+}
+
+tgg_framework.96 = { #trigger of 1931's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.97
+            years = 1
+        }
+    }
+}
+
+tgg_framework.97 = { #trigger of 1932's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.98
+            years = 1
+        }
+    }
+}
+
+tgg_framework.98 = { #trigger of 1933's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.99
+            years = 1
+        }
+    }
+}
+
+tgg_framework.99 = { #trigger of 1934's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.100
+            years = 1
+        }
+    }
+}
+
+tgg_framework.100 = { #trigger of 1935's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        trigger_event = {
+            id = tgg_framework.101
+            years = 1
+        }
+    }
+}
+
+
+tgg_framework.101 = { #trigger of 1936's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+    }
+}
+
+tgg_framework.66666 = { #trigger of 1850's events
+    type = country_event
+    hidden = yes
+    
+    trigger = {}
+    
+    immediate = {
+        remove_global_variable = tgg_central_asia_active_rus
+        remove_global_variable = tgg_central_asia_passive_rus
+        remove_global_variable = tgg_persia_title
+        remove_global_variable = tgg_central_asia_coup
+        remove_global_variable = tgg_central_asia_assassination_antigbr 
+        remove_global_variable = tgg_afghanistan_assassination_prorus 
+        remove_global_variable = tgg_central_asia_disseisin
+        remove_global_variable = tgg_central_asia_staff 
+        remove_global_variable = tgg_central_asia_support
+        remove_global_variable = tgg_central_asia_agreement
+        remove_global_variable = tgg_afghanistan_title
+        remove_global_variable = tgg_uzbek_title
+        remove_global_variable = tgg_kyrgyz_title
+        remove_global_variable = tgg_operation_russia_win
+        remove_global_variable = tgg_operation_russia_intervention
+        remove_global_variable = tgg_operation_russia_threat
+        remove_global_variable = threat_fail
+        remove_global_variable = intelligence_success
+        remove_global_variable = intelligence_fail
+        remove_global_variable = tgg_event_on_central_asia
+        remove_global_variable = tgg_operation_gbr
+    }
+}

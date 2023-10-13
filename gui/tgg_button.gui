@@ -1,0 +1,21 @@
+types default_button_icons
+{	
+	type button_icon_restoration_action = button_icon_round
+	{
+		blockoverride "bg_texture" {
+			texture = "gfx/interface/buttons/russian_orthodox_bg.png"
+		}
+		blockoverride "wood_texture" {
+			texture = "gfx/interface/buttons/russian_orthodox.png"
+		}
+
+		blockoverride "frame_texture" {
+		}
+		blockoverride "frame_visible" {}
+
+		blockoverride "button" {
+			using = default_button_action
+		}
+	}
+}
+
